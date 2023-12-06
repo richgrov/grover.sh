@@ -1,0 +1,59 @@
+:root {
+	font-family: 'Inter', sans-serif;
+}
+
+body {
+	margin: 0;
+}
+
+nav {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	gap: 30px;
+}
+
+footer {
+	background-color: #eee;
+	padding: 40px 0;
+}
+
+footer .container {
+	width: 80%;
+	max-width: 1000px;
+	margin: auto;
+}
+
+footer .sections {
+	display: flex;
+	justify-content: space-between;
+	padding-bottom: 40px;
+}
+
+footer .sections ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+footer .sections li {
+	margin-bottom: 5px;
+}
+
+footer .connect {
+	display: flex;
+	gap: 5px;
+}
+
+footer .connect p {
+	flex-grow: 1;
+}
+
+footer .connect a {
+	width: 32px;
+	height: 32px;
+	padding: 10px;
+}
+
+footer .connect img {
+	max-width: 100%;
+}

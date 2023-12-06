@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{{ .Title }}</title>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="/main.css">
+</head>
+<body>
+	<nav>
+		<p>Richard Grover</p>
+		<p>VoxelAI</p>
+		<p>Connect</p>
+	</nav>
+	<main>
+		{{ .Content }}
+	</main>
+
+	<footer>
+		<div class="container">
+			<div class="sections">
+				<div>
+					<p>Products</p>
+					<ul>
+						<li><a>Breadbot</a></li>
+						<li><a>Intelliride</a></li>
+						<li><a>VoxelAI</a></li>
+						<li><a>MyFace</a></li>
+						<li><a>Quicktime</a></li>
+					</ul>
+				</div>
+				<div>
+					<p>Backend &amp; Tools</p>
+					<ul>
+						<li><a>oneworld</a></li>
+						<li><a>bproxy</a></li>
+						<li><a>rex</a></li>
+						<li><a>MCAutoMod</a></li>
+					</ul>
+				</div>
+				<div>
+					<p>Games</p>
+					<ul>
+						<li><a>Villa</a></li>
+						<li><a>Factortale</a></li>
+						<li><a>Firebeat</a></li>
+						<li><a>atc-sim</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="connect">
+				<p>&copy; {{ now.Year }} Your Site Name</p>
+				<a href="https://github.com/richgrov" style="background-color: white; border-bottom: 5px solid #ddd;">
+					<img src="/ic/github-black.png" alt="GitHub Icon">
+				</a>
+				<a href="https://www.linkedin.com/in/richgrov/" style="background-color: #2b62c1; border-bottom: 5px solid #4d84e2;">
+					<img src="/ic/linkedin-white.png" alt="LinkedIn Icon">
+				</a>
+				<a href="https://x.com/hyrdonic/" style="background-color: black; border-bottom: 5px solid #555;">
+					<img src="/ic/x-white.png" alt="X Icon">
+				</a>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>
