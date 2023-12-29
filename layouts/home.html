@@ -15,13 +15,26 @@
 		<link rel="stylesheet" href="/main.css" />
 	</head>
 	<body>
-		<nav class="flex justify-center gap-8 py-4">
-			<p>Richard Grover</p>
+		<nav class="fixed left-8 top-0 flex gap-8 py-4">
 			<p>VoxelAI</p>
 			<p>Connect</p>
 		</nav>
 
-		<main>{{ .Content }}</main>
+		<div class="flex h-[90vh] items-center justify-center">
+			<div>
+				<h1 class="text-9xl font-black">
+					Richard
+					<br />
+					Grover
+				</h1>
+				<h3 class="text-3xl">Software Engineer</h3>
+			</div>
+			<img
+				src="marble0.png"
+				alt="A grayscale, outlined render of a ball falling from a tube"
+				class="max-h-full"
+			/>
+		</div>
 
 		<footer class="bg-zinc-200 py-11">
 			<div class="mx-auto max-w-5xl">
