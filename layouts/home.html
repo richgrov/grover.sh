@@ -20,7 +20,18 @@
 		>
 			<div class="flex flex-col gap-5">
 				<h1 class="font-pixel text-7xl">Richard Grover</h1>
-				<h3 class="text-3xl">Software Engineer</h3>
+				<div class="flex items-center">
+					<h3 class="flex-1 text-3xl">Software Engineer</h3>
+					<a class="w-12 p-2" href="https://github.com/richgrov">
+						<img src="/ic/github.png" alt="GitHub Icon" />
+					</a>
+					<a class="w-12 p-2" href="https://www.linkedin.com/in/richgrov/">
+						<img src="/ic/linkedin.png" alt="LinkedIn Icon" />
+					</a>
+					<a class="w-12 p-2" href="https://x.com/hyrdonic/">
+						<img src="/ic/x.png" alt="X Icon" />
+					</a>
+				</div>
 			</div>
 			<button class="border-1 border-black px-5 py-4 shadow-[8px_8px_black]">
 				Download Resume
@@ -127,27 +138,7 @@
 					</div>
 				</div>
 
-				<div class="flex gap-1 pt-10">
-					<p class="grow">&copy; {{ now.Year }} Richard Grover</p>
-					<a
-						class="w-14 border-b-8 border-white bg-neutral-50 p-2"
-						href="https://github.com/richgrov"
-					>
-						<img src="/ic/github-black.png" alt="GitHub Icon" />
-					</a>
-					<a
-						class="w-14 border-b-8 border-[#4d84e2] bg-[#2b62c1] p-2"
-						href="https://www.linkedin.com/in/richgrov/"
-					>
-						<img src="/ic/linkedin-white.png" alt="LinkedIn Icon" />
-					</a>
-					<a
-						class="w-14 border-b-8 border-neutral-600 bg-black p-2"
-						href="https://x.com/hyrdonic/"
-					>
-						<img src="/ic/x-white.png" alt="X Icon" />
-					</a>
-				</div>
+				<p class="pt-10">&copy; {{ now.Year }} Richard Grover</p>
 			</div>
 		</footer>
 	</body>
