@@ -6,6 +6,10 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: ["Inter", ...fontFamily.sans],
+      pixel: ["Unispace", ...fontFamily.mono],
+    },
+    borderWidth: {
+      1: "1px",
     },
     extend: {},
   },
