@@ -38,6 +38,55 @@
 			</button>
 		</div>
 
+		<div
+			class="flex w-full justify-around border-b-1 border-black bg-black text-xl"
+		>
+			<div class="flex-1 rounded-3xl border-r-1 border-black bg-white py-10">
+				<div class="mx-auto w-2/3">
+					<h2 class="text-2xl">About</h2>
+					Hello, I'm <strong>Richard Grover</strong>. I live in
+					<strong>Salt Lake City, Utah</strong> and am passionate about:
+					<ul class="list-inside list-disc">
+						<li>Systems Engineering</li>
+						<li>Graphics Rendering</li>
+						<li>Augmented Reality</li>
+						<li>Machine Perception</li>
+						<li>Brain-Computer Interfaces</li>
+					</ul>
+				</div>
+			</div>
+			<div class="flex-1 rounded-3xl bg-white py-10">
+				<div class="mx-auto w-2/3">
+					<div class="flex w-full flex-col gap-1">
+						<h2 class="text-2xl">Experience</h2>
+						<!-- prettier-ignore -->
+						{{ $languages := slice
+						(dict "name" "Java" "year" 2017)
+						(dict "name" "JavaScript" "year" 2019)
+						(dict "name" "TypeScript" "year" 2020)
+						(dict "name" "Python" "year" 2020)
+						(dict "name" "C/C++" "year" 2020)
+						(dict "name" "Rust" "year" 2021)
+						(dict "name" "Go" "year" 2021)
+						(dict "name" "Kotlin" "year" 2021)
+					}}
+					{{range $languages}}
+					{{ $since := sub now.Year .year }}
+					{{ $denominator := sub now.Year 2017 }}
+					{{ $fraction := div (float $since) $denominator }}
+						<div
+							class="rounded-lg bg-black px-3 text-white"
+							style="width: {{ mul $fraction 100 }}%;"
+						>
+							<span class="float-left w-[50%]">{{.name}}</span>
+							<span class="float-right"> {{ $since }} Years </span>
+						</div>
+						{{end}}
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<div class="bg-neutral-50 text-2xl">
 			<div
 				class="mx-auto flex max-w-screen-2xl flex-col-reverse items-center justify-between lg:flex-row lg:items-stretch"
@@ -45,19 +94,6 @@
 				<img src="marble1.png" />
 				<div class="flex flex-col justify-evenly text-2xl">
 					<h2 class="mb-4 text-6xl font-semibold">Skills</h2>
-					<div>
-						<p>Languages:</p>
-						<ul class="list-inside list-disc">
-							<li>Rust - 2 years</li>
-							<li>Go - 2 years</li>
-							<li>C/C++ - 3 years</li>
-							<li>TypeScript - 3 years</li>
-							<li>JavaScript - 4 years</li>
-							<li>Python - 3 years</li>
-							<li>Kotlin - 2 years</li>
-							<li>Java - 6 years</li>
-						</ul>
-					</div>
 					<div>
 						<p>Technologies:</p>
 						<ul class="list-inside list-disc">
