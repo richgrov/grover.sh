@@ -87,38 +87,47 @@
 			</div>
 		</div>
 
-		<div class="bg-neutral-50 text-2xl">
-			<div
-				class="mx-auto flex max-w-screen-2xl flex-col-reverse items-center justify-between lg:flex-row lg:items-stretch"
-			>
-				<img src="marble1.png" />
-				<div class="flex flex-col justify-evenly text-2xl">
-					<h2 class="mb-4 text-6xl font-semibold">Skills</h2>
-					<div>
-						<p>Technologies:</p>
-						<ul class="list-inside list-disc">
-							<li>Docker</li>
-							<li>Linux</li>
-							<li>MySQL / SQLite</li>
-							<li>OpenGL / WebGPU / WebGL</li>
-							<li>Three.js</li>
-							<li>HTMX</li>
-						</ul>
-					</div>
-					<div>
-						<p>Cloud:</p>
-						<ul class="list-inside list-disc">
-							<li>Google Cloud Platform</li>
-							<li>OpenAI</li>
-							<li>Cloudflare</li>
-							<li>Firebase</li>
-							<li>Fly.io</li>
-							<li>Turso</li>
-						</ul>
-					</div>
+		<!-- prettier-ignore -->
+		{{ define "partials/topics.html"}}
+		{{ range . }}
+		<span class="rounded-md bg-gray-200 p-1 text-sm">{{.}}</span>
+		<!-- prettier-ignore -->
+		{{end}}
+		{{end}}
+
+		<div class="border-b-1 border-b-black py-10">
+			<h2 class="w-full text-center font-pixel text-5xl">Projects</h2>
+		</div>
+
+		<div class="flex justify-around py-16">
+			<div class="flex max-w-[40%] flex-col gap-5">
+				<h1 class="text-center font-pixel text-7xl">dCubed</h1>
+				<p>
+					The world's first Rubik's Cube solver that scans with only two
+					photos.
+				</p>
+
+				{{ partial "badge.html" }}
+
+				<div>
+					{{ partial "topics.html" (slice "Java" "Javalin" "OpenCV"
+					"Python" "PyTorch" "Flask" "TypeScript" "React" "TailwindCSS"
+					"Three.js") }}
 				</div>
 			</div>
+			<div class="max-w-[50%]">
+				<video
+					width="1280"
+					height="720"
+					autoplay
+					loop
+					class="shadow-[8px_8px_black]"
+				>
+					<source src="projects/dCubed/0.webm" type="video/webm" />
+				</video>
+			</div>
 		</div>
+
 		<footer class="bg-zinc-200 py-11">
 			<div class="mx-auto max-w-5xl">
 				<div class="flex justify-between gap-8">
