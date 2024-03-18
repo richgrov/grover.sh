@@ -99,15 +99,20 @@
 			<h2 class="w-full text-center font-pixel text-5xl">Projects</h2>
 		</div>
 
-		<div class="flex justify-around py-16">
-			<div class="flex max-w-[40%] flex-col gap-5">
-				<h1 class="text-center font-pixel text-7xl">dCubed</h1>
-				<p>
-					The world's first Rubik's Cube solver that scans with only two
-					photos.
-				</p>
+		<div class="flex items-center justify-around py-16">
+			<div class="flex max-w-[40%] flex-col items-center gap-5">
+				<h1 class="inline-block font-pixel text-7xl">dCubed</h1>
 
 				{{ partial "badge.html" }}
+
+				<ul class="list-disc">
+					<li>Scan an entire Rubik's Cube with only 2 photos</li>
+					<li>Get step-by-step instructions on how to solve</li>
+					<li>
+						Learn the <strong>human</strong> way of solving, not the
+						fastest way
+					</li>
+				</ul>
 
 				<div>
 					{{ partial "topics.html" (slice "Java" "Javalin" "OpenCV"
