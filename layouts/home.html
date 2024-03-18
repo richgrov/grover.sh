@@ -14,12 +14,12 @@
 
 		<link rel="stylesheet" href="/main.css" />
 	</head>
-	<body class="mx-auto max-w-screen-xl border-1 border-x-black">
+	<body class="max-w-screen-xl mx-auto w-11/12 border-1 border-x-black">
 		<div
-			class="flex w-full items-center justify-around border-b-1 border-b-black py-12"
+			class="lg:flex-row flex w-full flex-col items-center justify-around gap-5 border-b-1 border-b-black py-12"
 		>
-			<div class="flex flex-col gap-5">
-				<h1 class="font-pixel text-7xl">Richard Grover</h1>
+			<div class="flex max-w-[90%] flex-col gap-5">
+				<h1 class="md:text-7xl font-pixel text-6xl">Richard Grover</h1>
 				<div class="flex items-center">
 					<h3 class="flex-1 text-3xl">Software Engineer</h3>
 					<a class="w-12 p-2" href="https://github.com/richgrov">
@@ -39,10 +39,12 @@
 		</div>
 
 		<div
-			class="flex w-full justify-around border-b-1 border-black bg-black text-xl"
+			class="lg:flex-row flex w-full flex-col justify-around border-b-1 border-black bg-black text-xl"
 		>
-			<div class="flex-1 rounded-3xl border-r-1 border-black bg-white py-10">
-				<div class="mx-auto w-2/3">
+			<div
+				class="lg:border-b-0 lg:border-r-1 flex-1 rounded-3xl border-b-1 border-black bg-white py-10"
+			>
+				<div class="xl:w-2/3 mx-auto w-3/4">
 					<h2 class="text-2xl">About</h2>
 					Hello, I'm <strong>Richard Grover</strong>. I live in
 					<strong>Salt Lake City, Utah</strong> and am passionate about:
@@ -56,7 +58,7 @@
 				</div>
 			</div>
 			<div class="flex-1 rounded-3xl bg-white py-10">
-				<div class="mx-auto w-2/3">
+				<div class="xl:w-2/3 mx-auto w-3/4">
 					<div class="flex w-full flex-col gap-1">
 						<h2 class="text-2xl">Experience</h2>
 						<!-- prettier-ignore -->
@@ -78,7 +80,7 @@
 							class="rounded-lg bg-black px-3 text-white"
 							style="width: {{ mul $fraction 100 }}%;"
 						>
-							<span class="float-left w-[50%]">{{.name}}</span>
+							<span class="float-left">{{.name}}</span>
 							<span class="float-right"> {{ $since }} Years </span>
 						</div>
 						{{end}}
@@ -99,13 +101,15 @@
 			<h2 class="w-full text-center font-pixel text-5xl">Projects</h2>
 		</div>
 
-		<div class="flex items-center justify-around py-16">
-			<div class="flex max-w-[40%] flex-col items-center gap-5">
+		<div
+			class="md:flex-row md:gap-0 flex flex-col items-center justify-around gap-5 py-16"
+		>
+			<div class="md:max-w-[40%] flex w-11/12 flex-col items-center gap-5">
 				<h1 class="inline-block font-pixel text-7xl">dCubed</h1>
 
 				{{ partial "badge.html" }}
 
-				<ul class="list-disc">
+				<ul class="list-inside list-disc">
 					<li>Scan an entire Rubik's Cube with only 2 photos</li>
 					<li>Get step-by-step instructions on how to solve</li>
 					<li>
@@ -120,7 +124,7 @@
 					"Three.js") }}
 				</div>
 			</div>
-			<div class="max-w-[50%]">
+			<div class="md:max-w-[50%] w-11/12">
 				<video
 					width="1222"
 					height="706"

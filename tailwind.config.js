@@ -9,6 +9,7 @@ module.exports = {
       pixel: ["Unispace", ...fontFamily.mono],
     },
     borderWidth: {
+      0: "0",
       1: "1px",
     },
     extend: {
