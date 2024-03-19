@@ -92,14 +92,6 @@
 			</div>
 		</div>
 
-		<!-- prettier-ignore -->
-		{{ define "partials/topics.html"}}
-		{{ range . }}
-		<span class="rounded-md bg-gray-200 p-1 text-sm">{{.}}</span>
-		<!-- prettier-ignore -->
-		{{end}}
-		{{end}}
-
 		<div class="border-b-1 border-b-black py-10">
 			<h2 class="w-full text-center font-pixel text-5xl">Projects</h2>
 		</div>
@@ -130,11 +122,8 @@
 					View on GitHub
 				</a>
 
-				<div>
-					{{ partial "topics.html" (slice "Java" "Javalin" "OpenCV"
-					"Python" "PyTorch" "Flask" "TypeScript" "React" "TailwindCSS"
-					"Three.js") }}
-				</div>
+				{{ partial "topics.html" (slice "Java" "Javalin" "OpenCV" "Python"
+				"PyTorch" "Flask" "TypeScript" "React" "TailwindCSS" "Three.js") }}
 			</div>
 			<div class="w-11/12 md:max-w-[50%]">
 				<video
