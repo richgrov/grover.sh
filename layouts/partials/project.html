@@ -1,0 +1,43 @@
+<div
+	class="flex flex-col items-center justify-around gap-5 border-b-1 border-b-black py-16 md:flex-row md:gap-0"
+>
+	<div class="flex w-11/12 flex-col items-center gap-5 md:max-w-[40%]">
+		<h1 class="inline-block font-pixel text-7xl">{{.Name}}</h1>
+		{{ partial .Content }}
+
+		<div>
+			{{ range .Topics }}
+			<span class="rounded-md bg-gray-200 p-1 text-sm">{{.}}</span>
+			{{end}}
+		</div>
+	</div>
+	<div class="w-11/12 md:max-w-[50%]">
+		<!-- prettier-ignore -->
+		{{ $type := (printf "%T" .Src )}}
+		{{ if eq $type "string" }}
+
+		<img
+			class="border-1 border-black shadow-[8px_8px_black]"
+			src="{{.Src}}"
+			alt="{{.Alt}}"
+		/>
+
+		{{ else }}
+
+		<video
+			width="{{.Width}}"
+			height="{{.Height}}"
+			autoplay
+			loop
+			muted
+			playsinline
+			class="border-1 border-black shadow-[8px_8px_black]"
+		>
+			<source src="{{index .Src 0}}" type="video/webm" />
+			<source src="{{index .Alt 1}}" type="video/mp4" />
+			Your browser couldn't play this video
+		</video>
+
+		{{ end }}
+	</div>
+</div>

@@ -96,50 +96,18 @@
 			<h2 class="w-full text-center font-pixel text-5xl">Projects</h2>
 		</div>
 
-		<div
-			class="flex flex-col items-center justify-around gap-5 py-16 md:flex-row md:gap-0"
-		>
-			<div class="flex w-11/12 flex-col items-center gap-5 md:max-w-[40%]">
-				<h1 class="inline-block font-pixel text-7xl">dCubed</h1>
+		<!-- prettier-ignore -->
+		{{
+			partial "project.html" (dict
+				"Name" "dCubed"
+				"Content" "dcubed.html"
+				"Topics" (slice "Java" "Javalin" "OpenCV" "Python" "PyTorch" "Flask"
+					"TypeScript" "React" "TailwindCSS" "Three.js")
+				"Src" (slice "projects/dCubed/0.webm" "projects/dCubed/0.mp4")
+				"Width" 1222
+				"Height" 706
+			)
+		}}
 
-				<!-- prettier-ignore -->
-				{{ partial "badge.html" }}
-
-				An app that teaches you to solve a Rubik's Cube- powered by computer vision.
-
-				<ul class="list-inside list-disc">
-					<li>Scan an entire Rubik's Cube with only two photos</li>
-					<li>
-						Play, pause, rewind, and fast-forward through instructions
-					</li>
-					<li>
-						Learn the <strong>human</strong> way of solving, not the
-						absolute fastest
-					</li>
-				</ul>
-
-				<a href="https://github.com/richgrov/dCubed" class="underline">
-					View on GitHub
-				</a>
-
-				{{ partial "topics.html" (slice "Java" "Javalin" "OpenCV" "Python"
-				"PyTorch" "Flask" "TypeScript" "React" "TailwindCSS" "Three.js") }}
-			</div>
-			<div class="w-11/12 md:max-w-[50%]">
-				<video
-					width="1222"
-					height="706"
-					autoplay
-					loop
-					muted
-					playsinline
-					class="border-1 border-black shadow-[8px_8px_black]"
-				>
-					<source src="projects/dCubed/0.webm" type="video/webm" />
-					<source src="projects/dCubed/0.mp4" type="video/mp4" />
-					Your browser couldn't play this video
-				</video>
-			</div>
-		</div>
 	</body>
 </html>
