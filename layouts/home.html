@@ -15,31 +15,7 @@
 		<link rel="stylesheet" href="/main.css" />
 	</head>
 	<body class="mx-auto w-11/12 max-w-screen-xl border-1 border-x-black">
-		<div
-			class="flex w-full flex-col items-center justify-around gap-5 border-b-1 border-b-black py-12 lg:flex-row"
-		>
-			<div class="flex max-w-[90%] flex-col gap-5">
-				<h1 class="font-pixel text-6xl md:text-7xl">Richard Grover</h1>
-				<div class="flex items-center">
-					<h3 class="flex-1 text-3xl">Software Engineer</h3>
-					<a class="w-12 p-2" href="https://github.com/richgrov">
-						<img src="/ic/github.png" alt="GitHub Icon" />
-					</a>
-					<a class="w-12 p-2" href="https://www.linkedin.com/in/richgrov/">
-						<img src="/ic/linkedin.png" alt="LinkedIn Icon" />
-					</a>
-					<a class="w-12 p-2" href="https://x.com/richgrov">
-						<img src="/ic/x.png" alt="X Icon" />
-					</a>
-				</div>
-			</div>
-			<a
-				class="border-1 border-black px-5 py-4 shadow-[8px_8px_black]"
-				href="https://docs.google.com/document/d/1akoikF-HhU4yd5XELNqG_2zmnBDxIliNGXyniyAj8BM/export?format=pdf"
-			>
-				Download Resume
-			</a>
-		</div>
+		{{ partial "header.html" }}
 
 		<div
 			class="flex w-full flex-col justify-around border-b-1 border-black bg-black text-xl lg:flex-row"
