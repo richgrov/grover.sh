@@ -14,11 +14,11 @@
 
 		<link rel="stylesheet" href="/main.css" />
 	</head>
-	<body class="mx-auto w-11/12 max-w-screen-xl border-1 border-x-black">
+	<body>
 		{{ partial "header.html" }}
 
-		<div
-			class="flex w-full flex-col justify-around border-b-1 border-black bg-black text-xl lg:flex-row"
+		<section
+			class="flex w-full flex-col justify-around bg-black text-xl lg:flex-row"
 		>
 			<div
 				class="flex-1 rounded-3xl border-b-1 border-black bg-white py-10 lg:border-b-0 lg:border-r-1"
@@ -68,11 +68,11 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 
-		<div class="border-b-1 border-b-black py-10">
-			<h2 class="w-full text-center font-pixel text-5xl">Projects</h2>
-		</div>
+		<section class="py-10">
+			<h2 class="w-full text-center text-5xl">Projects</h2>
+		</section>
 
 		<!-- prettier-ignore -->
 		{{

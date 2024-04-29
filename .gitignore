@@ -1,5 +1,4 @@
 node_modules/
 /public/
-static/main.css
 *.blend1
 .hugo_build.lock
