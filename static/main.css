@@ -1,0 +1,106 @@
+body {
+	margin: 0 auto;
+	width: 90%;
+	max-width: 1280px;
+	font-family: "Inter", "Times New Roman";
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+}
+
+@font-face {
+	font-family: "Unispace";
+	src:
+		url("/fonts/unispace-bold.woff2") format("woff2"),
+		url("/fonts/unispace-bold.woff") format("woff");
+	font-weight: bold;
+}
+
+h1 {
+	font-family: "Unispace", monospace;
+	font-size: 4.5rem;
+}
+
+h2 {
+	font-family: "Unispace", monospace;
+	font-size: 3rem;
+}
+
+section {
+	border-bottom: 1px solid black;
+}
+
+img,
+video {
+	max-width: 100%;
+	height: auto;
+}
+
+button,
+.button {
+	border: 1px solid black;
+	box-shadow: 8px 8px black;
+	padding: 1rem 1.25rem;
+	text-decoration: none;
+	color: inherit;
+}
+
+.reset-link-style {
+	text-decoration: none;
+	color: inherit;
+}
+
+.margin-0 {
+	margin: 0;
+}
+
+.py-12 {
+	padding: 3rem 0;
+}
+
+a:has(> img) {
+	display: inline-block;
+}
+
+.row {
+	display: flex;
+}
+
+@media (max-width: 1024px) {
+	.col-if-tablet {
+		flex-direction: column;
+	}
+}
+
+.grow-1 {
+	flex-grow: 1;
+}
+
+.justify-around {
+	justify-content: space-around;
+}
+
+.items-center {
+	align-items: center;
+}
+
+.gap-4 {
+	gap: 1rem;
+}
+
+.text-3xl {
+	font-size: 1.875rem;
+}
+
+.w-text-3xl {
+	width: 1.875rem;
+}
+
+/* Apply tailwind styles to HTML generated via markdown */
+
+article p {
+	@apply mb-4;
+}
+
+article h2 {
+	@apply mb-4 text-2xl;
+}
