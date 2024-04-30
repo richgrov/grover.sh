@@ -39,6 +39,11 @@ video {
 	height: auto;
 }
 
+ul,
+ol {
+	margin: 0;
+}
+
 button,
 .button {
 	border: 1px solid black;
