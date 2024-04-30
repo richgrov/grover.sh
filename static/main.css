@@ -27,6 +27,7 @@ h2 {
 
 section {
 	border-bottom: 1px solid black;
+	padding: 3rem 0;
 }
 
 img,
@@ -51,10 +52,6 @@ button,
 
 .margin-0 {
 	margin: 0;
-}
-
-.py-12 {
-	padding: 3rem 0;
 }
 
 a:has(> img) {
