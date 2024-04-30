@@ -24,6 +24,7 @@ h1 {
 h2 {
 	font-family: "Unispace", monospace;
 	font-size: 3rem;
+	line-height: 4.2rem;
 	margin: 0;
 }
 
@@ -84,6 +85,7 @@ a:has(> img) {
 
 .text-3xl {
 	font-size: 1.875rem;
+	line-height: 2.625rem;
 }
 
 .w-text-3xl {
