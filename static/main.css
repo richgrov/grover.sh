@@ -18,11 +18,13 @@ body {
 h1 {
 	font-family: "Unispace", monospace;
 	font-size: 4.5rem;
+	margin: 0;
 }
 
 h2 {
 	font-family: "Unispace", monospace;
 	font-size: 3rem;
+	margin: 0;
 }
 
 section {
@@ -48,10 +50,6 @@ button,
 .reset-link-style {
 	text-decoration: none;
 	color: inherit;
-}
-
-.margin-0 {
-	margin: 0;
 }
 
 a:has(> img) {
