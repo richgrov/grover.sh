@@ -88,6 +88,11 @@ a:has(> img) {
 	gap: 1rem;
 }
 
+.text-xl {
+	font-size: 1.25rem;
+	line-height: 1.75rem;
+}
+
 .text-3xl {
 	font-size: 1.875rem;
 	line-height: 2.625rem;
@@ -95,6 +100,49 @@ a:has(> img) {
 
 .w-text-3xl {
 	width: 1.875rem;
+}
+
+.black-corners {
+	background-color: black;
+}
+
+.black-corners > * {
+	background-color: white;
+	border-radius: 1.5rem;
+	flex-basis: 0;
+	flex-grow: 1;
+}
+
+.black-corners > * > * {
+	width: 80%;
+	margin: 0 auto;
+}
+
+@media (min-width: 1025px) {
+	.black-corners > *:not(:last-child) {
+		border-right: 1px solid black;
+	}
+}
+
+@media (max-width: 1024px) {
+	.black-corners > *:not(:last-child) {
+		border-bottom: 1px solid black;
+	}
+}
+
+.bar {
+	background-color: black;
+	color: white;
+	border-radius: 0.5rem;
+	padding: 0 0.75rem;
+	margin-top: 0.25rem;
+}
+
+.bar > *:nth-child(2) {
+	font-size: 0.875rem;
+	line-height: 1.225rem;
+	float: right;
+	margin-top: 0.25rem;
 }
 
 /* Apply tailwind styles to HTML generated via markdown */

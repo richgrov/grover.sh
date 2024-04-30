@@ -17,13 +17,9 @@
 	<body>
 		{{ partial "header.html" }}
 
-		<section
-			class="flex w-full flex-col justify-around bg-black text-xl lg:flex-row"
-		>
-			<div
-				class="flex-1 rounded-3xl border-b-1 border-black bg-white py-10 lg:border-b-0 lg:border-r-1"
-			>
-				<div class="mx-auto w-5/6 xl:w-3/4">
+		<div class="row col-if-tablet black-corners text-xl">
+			<section>
+				<div>
 					<h2 class="text-2xl">About</h2>
 					Hello, I'm <strong>Richard Grover</strong>. I live in
 					<strong>Salt Lake City, Utah</strong> and am passionate about:
@@ -35,9 +31,9 @@
 						<li>Brain-Computer Interfaces</li>
 					</ul>
 				</div>
-			</div>
-			<div class="flex-1 rounded-3xl bg-white py-10">
-				<div class="mx-auto w-5/6 xl:w-3/4">
+			</section>
+			<section>
+				<div>
 					<div class="flex w-full flex-col gap-1">
 						<h2 class="text-2xl">Experience</h2>
 						<!-- prettier-ignore -->
@@ -55,10 +51,7 @@
 					{{ $since := sub now.Year .year }}
 					{{ $denominator := sub now.Year 2017 }}
 					{{ $fraction := div (float $since) $denominator }}
-						<div
-							class="rounded-lg bg-black px-3 text-white"
-							style="width: {{ mul $fraction 100 }}%;"
-						>
+						<div class="bar" style="width: {{ mul $fraction 100 }}%;">
 							<span class="float-left">{{.name}}</span>
 							<span class="float-right mt-1 text-sm">
 								{{ $since }} Years
@@ -67,8 +60,8 @@
 						{{end}}
 					</div>
 				</div>
-			</div>
-		</section>
+			</section>
+		</div>
 
 		<section class="py-10">
 			<h2 class="w-full text-center text-5xl">Projects</h2>
