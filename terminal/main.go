@@ -5,7 +5,6 @@ import (
 	"strings"
 	"unicode/utf8"
 
-	"github.com/charmbracelet/bubbles/list"
 	tea "github.com/charmbracelet/bubbletea"
 	"github.com/charmbracelet/lipgloss"
 	"github.com/charmbracelet/ssh"
@@ -69,15 +68,15 @@ func teaHandler(session ssh.Session) (tea.Model, []tea.ProgramOption) {
 		pty.Window.Width,
 		pty.Window.Height,
 		createHeaderStyle(pty.Window.Width),
-		newProjectList(pty.Window.Width, max(pty.Window.Height-headerHeight, 0)),
+		0,
 	}, []tea.ProgramOption{tea.WithAltScreen()}
 }
 
 type model struct {
-	width         int
-	height        int
-	centeredStyle lipgloss.Style
-	projectList   list.Model
+	width                int
+	height               int
+	centeredStyle        lipgloss.Style
+	selectedProjectIndex int
 }
 
 func (mod model) Init() tea.Cmd {
@@ -98,11 +97,11 @@ func (mod model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	}
 
 	var cmd tea.Cmd
-	mod.projectList, cmd = mod.projectList.Update(msg)
+	mod.selectedProjectIndex = HandleProjectListInput(msg, mod.selectedProjectIndex)
 	return mod, cmd
 }
 
 func (mod model) View() string {
-	return mod.centeredStyle.Render(strings.Join(HEADER, "\n")) + "\n" +
-		mod.centeredStyle.Render(mod.projectList.View())
+	return mod.centeredStyle.Render(strings.Join(HEADER, "\n")) +
+		RenderProjectList(mod.selectedProjectIndex, mod.width)
 }

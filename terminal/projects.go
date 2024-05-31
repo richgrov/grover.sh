@@ -1,66 +1,67 @@
 package main
 
 import (
-	"fmt"
-	"io"
+	"strings"
 
-	"github.com/charmbracelet/bubbles/list"
 	tea "github.com/charmbracelet/bubbletea"
 	"github.com/charmbracelet/lipgloss"
 )
 
-var PROJECTS = []list.Item{
-	project{"dCubed", "Scan & solve a Rubik's Cube with 2 Photos"},
-	project{"villa", "Clean-room implementation of the Minecraft Beta 1.7.3 client"},
-}
+const PROJECT_LIST_WIDTH int = 80
 
-var projectStyle = lipgloss.NewStyle().
-	PaddingLeft(2)
-
-var selectedProjectStyle = lipgloss.NewStyle().
-	Foreground(lipgloss.Color("#0078BA"))
-
-type project struct {
-	title       string
+type Project struct {
+	name        string
 	description string
 }
 
-type itemDelegate struct{}
-
-func (i project) FilterValue() string { return "" }
-
-func (del itemDelegate) Height() int {
-	return 2
+var PROJECTS = []Project{
+	{"dCubed", "Scan & solve a Rubik's Cube with 2 Photos"},
+	{"villa", "Clean-room implementation of the Minecraft Beta 1.7.3 client"},
 }
 
-func (del itemDelegate) Spacing() int {
-	return 1
-}
+var selectedStyle = lipgloss.NewStyle().
+	Foreground(lipgloss.Color("#0078BA"))
 
-func (del itemDelegate) Update(tag tea.Msg, model *list.Model) tea.Cmd { return nil }
+var navStyle = lipgloss.NewStyle().
+	Foreground(lipgloss.Color("#5C5C5C"))
 
-func (del itemDelegate) Render(w io.Writer, model list.Model, index int, listItem list.Item) {
-	it := listItem.(project)
-
-	var style lipgloss.Style
-	var text string
-
-	if model.Index() == index {
-		style = selectedProjectStyle
-		text = "\u25CF " + it.title + "\n  " + it.description
-	} else {
-		style = projectStyle
-		text = it.title + "\n" + it.description
+func HandleProjectListInput(msg tea.Msg, selectedIndex int) int {
+	key, ok := msg.(tea.KeyMsg)
+	if !ok {
+		return selectedIndex
 	}
 
-	fmt.Fprint(w, style.Render(text))
+	switch key.String() {
+	case "up", "k":
+		return max(selectedIndex-1, 0)
+
+	case "down", "j":
+		return min(selectedIndex+1, len(PROJECTS)-1)
+	}
+
+	return selectedIndex
 }
 
-func newProjectList(width int, height int) list.Model {
-	projectList := list.New(PROJECTS, itemDelegate{}, min(width, 80), height)
-	projectList.SetShowTitle(false)
-	projectList.SetShowStatusBar(false)
-	projectList.SetFilteringEnabled(false)
+func RenderProjectList(selectedIndex int, viewportWidth int) string {
+	leftPadding := calcPaddingToCenter(PROJECT_LIST_WIDTH, viewportWidth)
+	result := "\n" + navStyle.Render(centerText("Up: \u2191, k   Down: \u2193, j", viewportWidth))
 
-	return projectList
+	for i, project := range PROJECTS {
+		if i == selectedIndex {
+			result += selectedStyle.Render("\n\n" + leftPadding + "\u25CF " + project.name + "\n" + leftPadding + "  " + project.description)
+		} else {
+			result += "\n\n" + leftPadding + "  " + project.name + "\n" + leftPadding + "  " + project.description
+		}
+	}
+
+	return result
+}
+
+func calcPaddingToCenter(lineWidth int, viewportWidth int) string {
+	return strings.Repeat(" ", viewportWidth/2-lineWidth/2)
+}
+
+func centerText(text string, viewportWidth int) string {
+	textLen := len([]rune(text))
+	return calcPaddingToCenter(textLen, viewportWidth) + text
 }

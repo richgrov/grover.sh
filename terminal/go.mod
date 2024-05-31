@@ -3,7 +3,6 @@ module github.com/richgrov/grover.sh/terminal/v2
 go 1.21.1
 
 require (
-	github.com/charmbracelet/bubbles v0.18.0
 	github.com/charmbracelet/bubbletea v0.25.0
 	github.com/charmbracelet/lipgloss v0.10.0
 	github.com/charmbracelet/ssh v0.0.0-20240401141849-854cddfa2917
