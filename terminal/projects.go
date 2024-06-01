@@ -76,12 +76,3 @@ func RenderProjectList(selectedIndex int, viewportWidth int) string {
 
 	return result
 }
-
-func calcPaddingToCenter(lineWidth int, viewportWidth int) string {
-	return strings.Repeat(" ", viewportWidth/2-lineWidth/2)
-}
-
-func centerText(text string, viewportWidth int) string {
-	textLen := len([]rune(text))
-	return calcPaddingToCenter(textLen, viewportWidth) + text
-}

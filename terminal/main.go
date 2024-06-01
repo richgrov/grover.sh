@@ -6,7 +6,6 @@ import (
 	"unicode/utf8"
 
 	tea "github.com/charmbracelet/bubbletea"
-	"github.com/charmbracelet/lipgloss"
 	"github.com/charmbracelet/ssh"
 	"github.com/charmbracelet/wish"
 	"github.com/charmbracelet/wish/activeterm"
@@ -32,12 +31,6 @@ func init() {
 	for _, line := range HEADER {
 		headerWidth = max(utf8.RuneCountInString(line), headerWidth)
 	}
-}
-
-func createHeaderStyle(windowWidth int) lipgloss.Style {
-	return lipgloss.NewStyle().
-		Width(windowWidth).
-		Align(lipgloss.Center)
 }
 
 func main() {
@@ -67,7 +60,7 @@ func teaHandler(session ssh.Session) (tea.Model, []tea.ProgramOption) {
 	return model{
 		pty.Window.Width,
 		pty.Window.Height,
-		createHeaderStyle(pty.Window.Width),
+		calcPaddingToCenter(headerWidth, pty.Window.Width),
 		0,
 	}, []tea.ProgramOption{tea.WithAltScreen()}
 }
@@ -75,7 +68,7 @@ func teaHandler(session ssh.Session) (tea.Model, []tea.ProgramOption) {
 type model struct {
 	width                int
 	height               int
-	centeredStyle        lipgloss.Style
+	headerPadding        string
 	selectedProjectIndex int
 }
 
@@ -88,7 +81,7 @@ func (mod model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	case tea.WindowSizeMsg:
 		mod.width = msg.Width
 		mod.height = msg.Height
-		mod.centeredStyle = createHeaderStyle(mod.width)
+		mod.headerPadding = calcPaddingToCenter(headerWidth, mod.width)
 	case tea.KeyMsg:
 		switch msg.String() {
 		case "q", "ctrl+c":
@@ -102,6 +95,6 @@ func (mod model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 }
 
 func (mod model) View() string {
-	return mod.centeredStyle.Render(strings.Join(HEADER, "\n")) +
+	return mod.headerPadding + strings.Join(HEADER, "\n"+mod.headerPadding) +
 		RenderProjectList(mod.selectedProjectIndex, mod.width)
 }
