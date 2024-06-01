@@ -74,6 +74,7 @@ func RenderProjectList(selectedIndex int, viewportWidth int, builder *strings.Bu
 		renderProjectTags(&project, leftPadding+color, builder)
 	}
 }
+
 func renderProjectTags(project *Project, prefix string, builder *strings.Builder) {
 	builder.WriteString("\n" + "  " + prefix)
 	lineLength := 0
