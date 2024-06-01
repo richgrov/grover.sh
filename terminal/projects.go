@@ -71,6 +71,24 @@ func RenderProjectList(selectedIndex int, viewportWidth int, builder *strings.Bu
 		}
 
 		builder.WriteString("\n" + leftPadding + "  " + color + project.description)
-		builder.WriteString("\n" + leftPadding + "  " + color + strings.Join(project.tags, " \u2022 "))
+		renderProjectTags(&project, leftPadding+color, builder)
+	}
+}
+func renderProjectTags(project *Project, prefix string, builder *strings.Builder) {
+	builder.WriteString("\n" + "  " + prefix)
+	lineLength := 0
+	for tagIdx, tag := range project.tags {
+		if lineLength+len(tag) > PROJECT_LIST_WIDTH {
+			builder.WriteString("\n  " + prefix)
+			lineLength = 0
+		}
+
+		builder.WriteString(tag)
+		lineLength += len(tag)
+
+		if tagIdx != len(project.tags)-1 {
+			builder.WriteString(" \u2022 ")
+			lineLength += 3
+		}
 	}
 }
