@@ -33,7 +33,7 @@ var PROJECTS = []Project{
 	),
 	project(
 		"grover.sh", "Source code for my website and this SSH server",
-		"Hugo", "TailwindCSS", "wish", "SSH",
+		"Hugo", "TailwindCSS", "wish",
 	),
 }
 
