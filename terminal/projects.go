@@ -4,7 +4,6 @@ import (
 	"strings"
 
 	tea "github.com/charmbracelet/bubbletea"
-	"github.com/charmbracelet/lipgloss"
 )
 
 const PROJECT_LIST_WIDTH int = 80
@@ -12,18 +11,31 @@ const PROJECT_LIST_WIDTH int = 80
 type Project struct {
 	name        string
 	description string
+	tags        []string
+}
+
+func project(name string, description string, tags ...string) Project {
+	return Project{
+		name:        name,
+		description: description,
+		tags:        tags,
+	}
 }
 
 var PROJECTS = []Project{
-	{"dCubed", "Scan & solve a Rubik's Cube with 2 Photos"},
-	{"villa", "Clean-room implementation of the Minecraft Beta 1.7.3 client"},
+	project(
+		"dCubed", "Scan & solve a Rubik's Cube with 2 Photos",
+		"Java", "Javalin", "OpenCV", "Python", "PyTorch", "Flask", "TypeScript", "React", "TailwindCSS", "Three.js",
+	),
+	project(
+		"villa", "Clean-room implementation of the Minecraft Beta 1.7.3 client",
+		"Rust", "WGPU", "WGSL", "TCP",
+	),
+	project(
+		"grover.sh", "Source code for my website and this SSH server",
+		"Hugo", "TailwindCSS", "wish", "SSH",
+	),
 }
-
-var selectedStyle = lipgloss.NewStyle().
-	Foreground(lipgloss.Color("#0078BA"))
-
-var navStyle = lipgloss.NewStyle().
-	Foreground(lipgloss.Color("#5C5C5C"))
 
 func HandleProjectListInput(msg tea.Msg, selectedIndex int) int {
 	key, ok := msg.(tea.KeyMsg)
@@ -44,14 +56,22 @@ func HandleProjectListInput(msg tea.Msg, selectedIndex int) int {
 
 func RenderProjectList(selectedIndex int, viewportWidth int) string {
 	leftPadding := calcPaddingToCenter(PROJECT_LIST_WIDTH, viewportWidth)
-	result := "\n" + navStyle.Render(centerText("Up: \u2191, k   Down: \u2193, j", viewportWidth))
+	result := "\n" + AnsiRed + centerText("Up: \u2191, k   Down: \u2193, j", viewportWidth)
 
 	for i, project := range PROJECTS {
+		color := AnsiReset
 		if i == selectedIndex {
-			result += selectedStyle.Render("\n\n" + leftPadding + "\u25CF " + project.name + "\n" + leftPadding + "  " + project.description)
-		} else {
-			result += "\n\n" + leftPadding + "  " + project.name + "\n" + leftPadding + "  " + project.description
+			color = AnsiBlue
 		}
+
+		if i == selectedIndex {
+			result += "\n\n" + leftPadding + color + "\u25CF " + project.name
+		} else {
+			result += "\n\n" + leftPadding + "  " + color + project.name
+		}
+
+		result += "\n" + leftPadding + "  " + color + project.description
+		result += "\n" + leftPadding + "  " + color + strings.Join(project.tags, " \u2022 ")
 	}
 
 	return result
