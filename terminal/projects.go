@@ -59,19 +59,21 @@ func RenderProjectList(selectedIndex int, viewportWidth int, builder *strings.Bu
 	builder.WriteString("\n" + AnsiRed + centerText("Up: \u2191, k   Down: \u2193, j", viewportWidth))
 
 	for i, project := range PROJECTS {
-		color := AnsiReset
+		titleColor := AnsiReset
+		bodyColor := AnsiGray
 		if i == selectedIndex {
-			color = AnsiBlue
+			titleColor = AnsiBlue
+			bodyColor = AnsiBlue
 		}
 
 		if i == selectedIndex {
-			builder.WriteString("\n\n" + leftPadding + color + "\u25CF " + project.name)
+			builder.WriteString("\n\n" + leftPadding + titleColor + "\u25CF " + project.name)
 		} else {
-			builder.WriteString("\n\n" + leftPadding + color + "  " + project.name)
+			builder.WriteString("\n\n" + leftPadding + titleColor + "  " + project.name)
 		}
 
-		builder.WriteString("\n" + leftPadding + "  " + color + project.description)
-		renderProjectTags(&project, leftPadding+color, builder)
+		builder.WriteString("\n  " + leftPadding + bodyColor + project.description)
+		renderProjectTags(&project, leftPadding+bodyColor, builder)
 	}
 }
 
