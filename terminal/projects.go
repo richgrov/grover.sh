@@ -54,9 +54,9 @@ func HandleProjectListInput(msg tea.Msg, selectedIndex int) int {
 	return selectedIndex
 }
 
-func RenderProjectList(selectedIndex int, viewportWidth int) string {
+func RenderProjectList(selectedIndex int, viewportWidth int, builder *strings.Builder) {
 	leftPadding := calcPaddingToCenter(PROJECT_LIST_WIDTH, viewportWidth)
-	result := "\n" + AnsiRed + centerText("Up: \u2191, k   Down: \u2193, j", viewportWidth)
+	builder.WriteString("\n" + AnsiRed + centerText("Up: \u2191, k   Down: \u2193, j", viewportWidth))
 
 	for i, project := range PROJECTS {
 		color := AnsiReset
@@ -65,14 +65,12 @@ func RenderProjectList(selectedIndex int, viewportWidth int) string {
 		}
 
 		if i == selectedIndex {
-			result += "\n\n" + leftPadding + color + "\u25CF " + project.name
+			builder.WriteString("\n\n" + leftPadding + color + "\u25CF " + project.name)
 		} else {
-			result += "\n\n" + leftPadding + "  " + color + project.name
+			builder.WriteString("\n\n" + leftPadding + color + "  " + project.name)
 		}
 
-		result += "\n" + leftPadding + "  " + color + project.description
-		result += "\n" + leftPadding + "  " + color + strings.Join(project.tags, " \u2022 ")
+		builder.WriteString("\n" + leftPadding + "  " + color + project.description)
+		builder.WriteString("\n" + leftPadding + "  " + color + strings.Join(project.tags, " \u2022 "))
 	}
-
-	return result
 }

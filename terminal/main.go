@@ -95,6 +95,10 @@ func (mod model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 }
 
 func (mod model) View() string {
-	return mod.headerPadding + strings.Join(HEADER, "\n"+mod.headerPadding) +
-		RenderProjectList(mod.selectedProjectIndex, mod.width)
+	var builder strings.Builder
+
+	builder.WriteString(mod.headerPadding)
+	builder.WriteString(strings.Join(HEADER, "\n"+mod.headerPadding))
+	RenderProjectList(mod.selectedProjectIndex, mod.width, &builder)
+	return builder.String()
 }
