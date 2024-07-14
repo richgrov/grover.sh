@@ -6,6 +6,8 @@ body {
 	border-left: 1px solid black;
 	border-right: 1px solid black;
 	background-color: #fefefa;
+	font-size: 1.25rem;
+	line-height: 1.75rem;
 }
 
 @font-face {
@@ -18,14 +20,14 @@ body {
 
 h1 {
 	font-family: "Unispace", monospace;
-	font-size: 4.5rem;
+	font-size: 3.5rem;
+	line-height: 4rem;
 	margin: 0;
 }
 
 h2 {
 	font-family: "Unispace", monospace;
-	font-size: 3rem;
-	line-height: 4.2rem;
+	line-height: 3rem;
 	margin: 0;
 }
 
@@ -89,14 +91,8 @@ a:has(> img) {
 	gap: 1rem;
 }
 
-.text-xl {
-	font-size: 1.25rem;
-	line-height: 1.75rem;
-}
-
-.text-3xl {
-	font-size: 1.875rem;
-	line-height: 2.625rem;
+.text-center {
+	text-align: center;
 }
 
 .w-text-3xl {
