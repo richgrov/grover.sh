@@ -93,6 +93,7 @@ a:has(> img) {
 
 .text-center {
 	text-align: center;
+	display: block;
 }
 
 .w-text-3xl {
