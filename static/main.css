@@ -142,13 +142,3 @@ a:has(> img) {
 	float: right;
 	margin-top: 0.25rem;
 }
-
-/* Apply tailwind styles to HTML generated via markdown */
-
-article p {
-	@apply mb-4;
-}
-
-article h2 {
-	@apply mb-4 text-2xl;
-}
