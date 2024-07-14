@@ -5,6 +5,7 @@ body {
 	font-family: "Inter", "Times New Roman";
 	border-left: 1px solid black;
 	border-right: 1px solid black;
+	background-color: #fefefa;
 }
 
 @font-face {
@@ -107,7 +108,7 @@ a:has(> img) {
 }
 
 .black-corners > * {
-	background-color: white;
+	background-color: #fefefa;
 	border-radius: 1.5rem;
 	flex-basis: 0;
 	flex-grow: 1;
