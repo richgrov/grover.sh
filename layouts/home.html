@@ -52,10 +52,8 @@
 					{{ $denominator := sub now.Year 2017 }}
 					{{ $fraction := div (float $since) $denominator }}
 						<div class="bar" style="width: {{ mul $fraction 100 }}%;">
-							<span class="float-left">{{.name}}</span>
-							<span class="float-right mt-1 text-sm">
-								{{ $since }} Years
-							</span>
+							<span>{{.name}}</span>
+							<span> {{ $since }} Years </span>
 						</div>
 						{{end}}
 					</div>
