@@ -1,7 +1,7 @@
 {
 	"scripts": {
 		"dev": "hugo server",
-		"build": "tailwindcss -i src/main.css -o static/main.css --minify && hugo --minify"
+		"build": "hugo --minify"
 	},
 	"devDependencies": {
 		"prettier": "^3.1.0"
