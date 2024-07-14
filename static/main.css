@@ -33,7 +33,7 @@ h2 {
 
 section {
 	border-bottom: 1px solid black;
-	padding: 2.5rem 0;
+	padding: 2.5rem 1.25rem;
 }
 
 img,
@@ -111,7 +111,7 @@ a:has(> img) {
 }
 
 .black-corners > * > * {
-	width: 80%;
+	width: 85%;
 	margin: 0 auto;
 }
 
