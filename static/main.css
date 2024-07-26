@@ -9,6 +9,10 @@ body {
 	background-color: var(--bg);
 	font-size: 1.25rem;
 	line-height: 1.75rem;
+	background-image: url("city.svg");
+	background-repeat: no-repeat;
+	background-position: bottom right;
+	background-size: 33%;
 }
 
 @font-face {
