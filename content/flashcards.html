@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Image Viewing Game</title>
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				max-width: 800px;
+				margin: 0 auto;
+				padding: 20px;
+			}
+			#dropZone {
+				border: 2px dashed #ccc;
+				border-radius: 20px;
+				width: 100%;
+				margin: 20px 0;
+				padding: 20px;
+				text-content: center;
+			}
+			#gameArea {
+				display: none;
+			}
+			#currentImage {
+				max-width: 100%;
+				max-height: 400px;
+				margin-bottom: 20px;
+			}
+			button {
+				font-size: 16px;
+				padding: 10px;
+				margin: 5px;
+			}
+			#imageName {
+				font-size: 18px;
+				font-weight: bold;
+				margin-top: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Flashcards</h1>
+		<div id="dropZone">Drop images or click to select files</div>
+		<input
+			type="file"
+			id="fileInput"
+			accept="image/*"
+			multiple
+			style="display: none"
+		/>
+		<div id="gameArea">
+			<img id="currentImage" alt="Current image" />
+			<br />
+			<button id="revealName">Reveal Name</button>
+			<button id="nextImage">Next Image</button>
+			<button id="restart">Restart</button>
+			<div id="imageName"></div>
+			<div id="progress"></div>
+		</div>
+
+		<script>
+			let images = [];
+			let currentIndex = 0;
+
+			const dropZone = document.getElementById("dropZone");
+			const fileInput = document.getElementById("fileInput");
+			const gameArea = document.getElementById("gameArea");
+			const currentImage = document.getElementById("currentImage");
+			const revealNameButton = document.getElementById("revealName");
+			const nextImageButton = document.getElementById("nextImage");
+			const restartButton = document.getElementById("restart");
+			const imageNameDiv = document.getElementById("imageName");
+			const progressDiv = document.getElementById("progress");
+
+			dropZone.addEventListener("click", () => fileInput.click());
+			dropZone.addEventListener("dragover", (e) => e.preventDefault());
+			dropZone.addEventListener("drop", handleDrop);
+			fileInput.addEventListener("change", handleFileSelect);
+			revealNameButton.addEventListener("click", revealImageName);
+			nextImageButton.addEventListener("click", showNextImage);
+			restartButton.addEventListener("click", restartGame);
+
+			function handleDrop(e) {
+				e.preventDefault();
+				handleFiles(e.dataTransfer.files);
+			}
+
+			function handleFileSelect(e) {
+				handleFiles(e.target.files);
+			}
+
+			function handleFiles(files) {
+				images = Array.from(files).map((file) => ({
+					file,
+					name: file.name.split(".").slice(0, -1).join("."),
+					url: URL.createObjectURL(file),
+				}));
+				startGame();
+			}
+
+			function startGame() {
+				shuffleImages();
+				currentIndex = 0;
+				showNextImage();
+				gameArea.style.display = "block";
+				dropZone.style.display = "none";
+			}
+
+			function shuffleImages() {
+				for (let i = images.length - 1; i > 0; i--) {
+					const j = Math.floor(Math.random() * (i + 1));
+					[images[i], images[j]] = [images[j], images[i]];
+				}
+			}
+
+			function showNextImage() {
+				if (currentIndex < images.length) {
+					currentIndex++;
+					currentImage.src = images[currentIndex].url;
+					imageNameDiv.textContent = "";
+					updateProgress();
+				} else {
+					imageNameDiv.textContent = "No more images.";
+					currentImage.style.display = "none";
+					revealNameButton.style.display = "none";
+					nextImageButton.style.display = "none";
+				}
+			}
+
+			function revealImageName() {
+				imageNameDiv.textContent = `Image name: ${images[currentIndex].name}`;
+			}
+
+			function updateProgress() {
+				progressDiv.textContent = `Progress: ${currentIndex + 1}/${
+					images.length
+				}`;
+			}
+
+			function restartGame() {
+				startGame();
+			}
+		</script>
+	</body>
+</html>
