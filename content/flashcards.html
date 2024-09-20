@@ -116,10 +116,10 @@
 
 			function showNextImage() {
 				if (currentIndex < images.length) {
-					currentIndex++;
 					currentImage.src = images[currentIndex].url;
 					imageNameDiv.textContent = "";
 					updateProgress();
+					currentIndex++;
 				} else {
 					imageNameDiv.textContent = "No more images.";
 					currentImage.style.display = "none";
@@ -129,7 +129,9 @@
 			}
 
 			function revealImageName() {
-				imageNameDiv.textContent = `Image name: ${images[currentIndex].name}`;
+				imageNameDiv.textContent = `Image name: ${
+					images[currentIndex - 1].name
+				}`;
 			}
 
 			function updateProgress() {
@@ -140,6 +142,9 @@
 
 			function restartGame() {
 				startGame();
+				currentImage.style.display = "inline-block";
+				revealNameButton.style.display = "inline-block";
+				nextImageButton.style.display = "inline-block";
 			}
 		</script>
 	</body>
