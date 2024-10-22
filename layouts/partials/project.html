@@ -1,8 +1,10 @@
 <section>
 	<div class="row col-if-tablet items-center justify-around gap-4">
 		<div style="flex-basis: 50%">
-			<h1 class="text-center">{{.Name}}</h1>
-			{{ partial .Content }}
+			<div style="max-width: 400px; margin: 0 auto">
+				<h1 class="text-center">{{.Name}}</h1>
+				{{ partial .Content }}
+			</div>
 		</div>
 		<div style="flex-basis: 50%">
 			<!-- prettier-ignore -->
