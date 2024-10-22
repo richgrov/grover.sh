@@ -3,12 +3,6 @@
 		<div style="flex-basis: 50%">
 			<h1 class="text-center">{{.Name}}</h1>
 			{{ partial .Content }}
-
-			<div>
-				{{ range .Topics }}
-				<span class="tag">{{.}}</span>
-				{{end}}
-			</div>
 		</div>
 		<div style="flex-basis: 50%">
 			<!-- prettier-ignore -->

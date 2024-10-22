@@ -152,14 +152,6 @@ a:has(> img) {
 	box-shadow: 8px 8px black;
 }
 
-.tag {
-	background-color: #eeeeea;
-	border-radius: 0.375rem;
-	padding: 0 0.75rem;
-	margin-top: 0.25rem;
-	font-size: 1rem;
-}
-
 .fire-text {
 	animation: bg-shift 1.5s linear infinite;
 	background-clip: text;
