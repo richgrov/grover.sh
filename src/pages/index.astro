@@ -1,0 +1,121 @@
+---
+import Experience from "../components/Experience.astro";
+import Header from "../components/Header.astro";
+import Project from "../components/Project.astro";
+---
+
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Oranienbaum&display=swap"
+			rel="stylesheet"
+		/>
+
+		<link rel="stylesheet" href="/main.css" />
+	</head>
+	<body>
+		<Header />
+
+		<div class="row col-if-tablet black-corners">
+			<section>
+				<div>
+					<h2>About</h2>
+					Hello, I'm <strong>Richard Grover</strong>. I live in
+					<strong>Salt Lake City, Utah</strong> and am passionate about:
+					<ul class="list-inside list-disc">
+						<li>Backend</li>
+						<li>Systems Engineering</li>
+						<li>Embedded</li>
+						<li>Robotics</li>
+						<li>Brain-Computer Interfaces</li>
+					</ul>
+				</div>
+			</section>
+			<section>
+				<div>
+					<div class="flex w-full flex-col gap-1">
+						<h2>Experience</h2>
+						<Experience />
+					</div>
+				</div>
+			</section>
+		</div>
+
+		<section>
+			<h2 class="text-center">Projects</h2>
+		</section>
+
+		<Project
+			name="dCubed"
+			src={["projects/dCubed/0.webm", "projects/dCubed/0.mp4"]}
+			width={1222}
+			height={706}
+		>
+			A Rubik's Cube solver powered by computer vision.
+			<span class="fire-text"><strong>1st place</strong></span> at my college's
+			project showcase!
+
+			<p>
+				<a href="https://github.com/richgrov/dCubed" class="text-center"
+					>View on GitHub</a
+				>
+			</p>
+		</Project>
+
+		<Project name="Rethinking Webdev with HTMX" src="projects/htmx/htmx.jpg">
+			A talk I gave at the
+			<a href="https://www.meetup.com/reactjs-utah/">React Utah Meetup</a> to
+			discuss the HTMX library.
+
+			<p class="text-center">
+				<a
+					href="https://www.linkedin.com/feed/update/urn:li:activity:7250701422923558912/"
+					>LinkedIn</a
+				>
+				<a
+					href="https://github.com/richgrov/talks/tree/main/htmx"
+					style="padding-left: 1rem">Resources on Github</a
+				>
+			</p>
+		</Project>
+
+		<Project
+			name="vkad"
+			src={["projects/vkad/0.webm", "projects/vkad/0.mp4"]}
+		>
+			A Vulkan-based CAD program capable of creating 3D-printable models.
+
+			<p>
+				<a href="https://github.com/richgrov/vkad" class="text-center"
+					>View on GitHub</a
+				>
+			</p>
+		</Project>
+
+		<Project
+			name="villa"
+			src="https://raw.githubusercontent.com/richgrov/villa/main/screenshot.png"
+		>
+			A clean-room implementation of the Minecraft Beta 1.7.3 client written
+			in Rust.
+
+			<p>
+				<a href="https://github.com/richgrov/villa" class="text-center">
+					View on GitHub
+				</a>
+			</p>
+		</Project>
+
+		<section style="padding-bottom: 5rem"></section>
+	</body>
+</html>

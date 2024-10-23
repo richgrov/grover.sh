@@ -1,0 +1,30 @@
+---
+const experience: [string, number][] = [
+	["Java", 2017],
+	["JavaScript", 2019],
+	["TypeScript", 2020],
+	["Python", 2020],
+	["C/C++", 2020],
+	["Rust", 2021],
+	["Go", 2021],
+	["Kotlin", 2021],
+];
+const mostYearsExperience = new Date().getUTCFullYear() - experience[0]![1];
+---
+
+{
+	experience.map((entry) => {
+		const [name, startYear] = entry;
+		const totalYears = new Date().getUTCFullYear() - startYear;
+
+		return (
+			<div
+				class="bar"
+				style={`width: ${(totalYears / mostYearsExperience) * 100}%`}
+			>
+				<span>{name}</span>
+				<span>{totalYears} Years </span>
+			</div>
+		);
+	})
+}

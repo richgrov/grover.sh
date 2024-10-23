@@ -1,0 +1,35 @@
+---
+const { name, src, alt, width, height } = Astro.props;
+---
+
+<section>
+	<div class="row col-if-tablet items-center justify-around gap-4">
+		<div style="flex-basis: 50%">
+			<div style="max-width: 400px; margin: 0 auto">
+				<h1 class="text-center">{name}</h1>
+				<slot />
+			</div>
+		</div>
+		<div style="flex-basis: 50%">
+			{
+				typeof src === "string" ? (
+					<img class="shadow" src={src} alt={alt} />
+				) : (
+					<video
+						width={width}
+						height={height}
+						autoplay
+						loop
+						muted
+						playsinline
+						class="shadow"
+					>
+						<source src={src[0]} type="video/webm" />
+						<source src={src[1]} type="video/mp4" />
+						Your browser couldn't play this video
+					</video>
+				)
+			}
+		</div>
+	</div>
+</section>
