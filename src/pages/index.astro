@@ -9,6 +9,10 @@ import Project from "../components/Project.astro";
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="description"
+			content="Hello, I'm Richard Grover. I live in Salt Lake City, Utah and am interested in all things tech. Learn more about me here!"
+		/>
 
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -73,7 +77,11 @@ import Project from "../components/Project.astro";
 			</p>
 		</Project>
 
-		<Project name="Rethinking Webdev with HTMX" src="projects/htmx/htmx.jpg">
+		<Project
+			name="Rethinking Webdev with HTMX"
+			src="projects/htmx/htmx.jpg"
+			alt="Presenting at the meetup"
+		>
 			A talk I gave at the
 			<a href="https://www.meetup.com/reactjs-utah/">React Utah Meetup</a> to
 			discuss the HTMX library.
@@ -106,6 +114,7 @@ import Project from "../components/Project.astro";
 		<Project
 			name="villa"
 			src="https://raw.githubusercontent.com/richgrov/villa/main/screenshot.png"
+			alt="Screenshot of the project"
 		>
 			A clean-room implementation of the Minecraft Beta 1.7.3 client written
 			in Rust.
