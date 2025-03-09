@@ -168,6 +168,11 @@ a:has(> img) {
 	);
 }
 
+.invert-text {
+	background-color: black;
+	color: white;
+}
+
 @keyframes bg-shift {
 	0% {
 		background-position: 0 0;

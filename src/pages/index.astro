@@ -2,6 +2,7 @@
 import Experience from "../components/Experience.astro";
 import Header from "../components/Header.astro";
 import Project from "../components/Project.astro";
+import Stopwatch from "../components/Stopwatch.astro";
 ---
 
 <!doctype html>
@@ -36,21 +37,34 @@ import Project from "../components/Project.astro";
 				<div>
 					<h2>About</h2>
 					Hello, I'm <strong>Richard Grover</strong>. I live in
-					<strong>Salt Lake City, Utah</strong> and am passionate about:
-					<ul class="list-inside list-disc">
-						<li>Backend</li>
-						<li>Systems Engineering</li>
-						<li>Embedded</li>
-						<li>Robotics</li>
-						<li>Brain-Computer Interfaces</li>
+					<strong>Salt Lake City, Utah</strong>.
+					<ul>
+						<li>When I was 12, I wrote my first line of code</li>
+						<li>
+							When I was 17, I founded a gaming startup that got acquired
+						</li>
+						<li>
+							Now, I attend
+							<a href="https://neumont.edu/" target="_blank"
+								>Neumont College of Computer Science</a
+							>
+						</li>
 					</ul>
 				</div>
 			</section>
 			<section>
 				<div>
 					<div class="flex w-full flex-col gap-1">
-						<h2>Experience</h2>
+						<h2>Statistics</h2>
 						<Experience />
+						<p>
+							Building for <Stopwatch since={Date.UTC(2012, 6, 18)} />
+							Programming for <Stopwatch since={Date.UTC(2017, 0, 0)} />
+						</p>
+						<p>
+							Whether it's mobile apps, compilers, frontend, or robotics,
+							I have always had a passion for building new things.
+						</p>
 					</div>
 				</div>
 			</section>

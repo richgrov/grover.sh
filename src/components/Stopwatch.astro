@@ -1,0 +1,18 @@
+---
+const { since } = Astro.props;
+---
+
+<script define:vars={{ since }}>
+	setInterval(() => {
+		const difference = Date.now() - new Date(since);
+		const seconds = Math.floor(difference / 1000);
+		const minutes = Math.floor(seconds / 60);
+		const hours = Math.floor(minutes / 60);
+		const days = Math.floor(hours / 24);
+		const years = Math.floor(days / 365);
+		const span = document.getElementById(since);
+		span.innerText = `${years}y, ${days % 365}d, ${hours % 24}h, ${minutes % 60}m, ${seconds % 60}s`;
+	}, 1000);
+</script>
+
+<span id={since} class="invert-text"></span>
