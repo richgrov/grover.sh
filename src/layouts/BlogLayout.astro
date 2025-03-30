@@ -6,6 +6,11 @@ const { frontmatter } = Astro.props;
 
 <Layout title={frontmatter.title} description={frontmatter.description}>
 	<section>
-		<slot />
+		<h2 class="text-center">{frontmatter.title}</h2>
+	</section>
+	<section>
+		<div style="max-width: 768px; margin: 0 auto;">
+			<slot />
+		</div>
 	</section>
 </Layout>

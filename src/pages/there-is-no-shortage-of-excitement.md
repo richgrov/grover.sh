@@ -5,7 +5,6 @@ pubDate: 2025-03-30
 description: Send this to anyone who thinks reality is dull
 ---
 
-## There is No Shortage of Exitement
 
 **"There is no shortage of exitement"** is a quote from an employee of a tech company I admire when
 asked how he enjoys life without watching TV, drinking alchohol, or reading the news.
