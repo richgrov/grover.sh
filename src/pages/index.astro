@@ -1,147 +1,133 @@
 ---
+import Layout from "../layouts/Layout.astro";
+
 import Experience from "../components/Experience.astro";
-import Header from "../components/Header.astro";
 import Project from "../components/Project.astro";
 import Stopwatch from "../components/Stopwatch.astro";
+
+const articleImports = Object.values(import.meta.glob("./*.md"));
+const articles: any[] = await Promise.all(
+	articleImports.map((article) => article()),
+);
 ---
 
-<!doctype html>
-<html>
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta
-			name="description"
-			content="Hello, I'm Richard Grover. I live in Salt Lake City, Utah and am interested in all things tech. Learn more about me here!"
-		/>
-
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
-			rel="stylesheet"
-		/>
-		<link
-			href="https://fonts.googleapis.com/css2?family=Oranienbaum&display=swap"
-			rel="stylesheet"
-		/>
-
-		<link rel="stylesheet" href="/main.css" />
-		<title>Richard Grover - Home Page</title>
-	</head>
-	<body>
-		<Header />
-
-		<div class="row col-if-tablet black-corners">
-			<section>
-				<div>
-					<h2>About</h2>
-					Hello, I'm <strong>Richard Grover</strong>. I live in
-					<strong>Salt Lake City, Utah</strong>.
-					<ul>
-						<li>When I was 12, I wrote my first line of code</li>
-						<li>
-							When I was 17, I founded a gaming startup that got acquired
-						</li>
-						<li>
-							Now, I attend
-							<a href="https://neumont.edu/" target="_blank"
-								>Neumont College of Computer Science</a
-							>
-						</li>
-					</ul>
-				</div>
-			</section>
-			<section>
-				<div>
-					<div class="flex w-full flex-col gap-1">
-						<h2>Statistics</h2>
-						<Experience />
-						<p>
-							Building for <Stopwatch since={Date.UTC(2012, 6, 18)} />
-							Programming for <Stopwatch since={Date.UTC(2017, 0, 0)} />
-						</p>
-						<p>
-							Whether it's mobile apps, compilers, frontend, or robotics,
-							I have always had a passion for building new things.
-						</p>
-					</div>
-				</div>
-			</section>
-		</div>
-
+<Layout
+	title="Richard Grover - Home Page"
+	description="Hello, I'm Richard Grover. I live in Salt Lake City, Utah and am interested in all things tech. Learn more about me here!"
+>
+	<div class="row col-if-tablet black-corners">
 		<section>
-			<h2 class="text-center">Projects</h2>
+			<div>
+				<h2>About</h2>
+				Hello, I'm <strong>Richard Grover</strong>. I live in
+				<strong>Salt Lake City, Utah</strong>.
+				<ul>
+					<li>When I was 12, I wrote my first line of code</li>
+					<li>
+						When I was 17, I founded a gaming startup that got acquired
+					</li>
+					<li>
+						Now, I attend
+						<a href="https://neumont.edu/" target="_blank"
+							>Neumont College of Computer Science</a
+						>
+					</li>
+				</ul>
+			</div>
 		</section>
+		<section>
+			<div>
+				<div class="flex w-full flex-col gap-1">
+					<h2>Statistics</h2>
+					<Experience />
+					<p>
+						Building for <Stopwatch since={Date.UTC(2012, 6, 18)} />
+						Programming for <Stopwatch since={Date.UTC(2017, 0, 0)} />
+					</p>
+					<p>
+						Whether it's mobile apps, compilers, frontend, or robotics, I
+						have always had a passion for building new things.
+					</p>
+				</div>
+			</div>
+		</section>
+	</div>
 
-		<Project
-			name="dCubed"
-			src={["projects/dCubed/0.webm", "projects/dCubed/0.mp4"]}
-			width={1222}
-			height={706}
-		>
-			A Rubik's Cube solver powered by computer vision.
-			<span class="fire-text"><strong>1st place</strong></span> at my college's
-			project showcase!
+	<section>
+		<h2 class="text-center">Projects</h2>
+	</section>
 
-			<p>
-				<a href="https://github.com/richgrov/dCubed" class="text-center"
-					>View on GitHub</a
-				>
-			</p>
-		</Project>
+	<Project
+		name="dCubed"
+		src={["projects/dCubed/0.webm", "projects/dCubed/0.mp4"]}
+		width={1222}
+		height={706}
+	>
+		A Rubik's Cube solver powered by computer vision.
+		<span class="fire-text"><strong>1st place</strong></span> at my college's project
+		showcase!
 
-		<Project
-			name="Rethinking Webdev with HTMX"
-			src="projects/htmx/htmx.jpg"
-			alt="Presenting at the meetup"
-		>
-			A talk I gave at the
-			<a href="https://www.meetup.com/reactjs-utah/">React Utah Meetup</a> to
-			discuss the HTMX library.
+		<p>
+			<a href="https://github.com/richgrov/dCubed" class="text-center"
+				>View on GitHub</a
+			>
+		</p>
+	</Project>
 
-			<p class="text-center">
-				<a
-					href="https://www.linkedin.com/feed/update/urn:li:activity:7250701422923558912/"
-					>LinkedIn</a
-				>
-				<a
-					href="https://github.com/richgrov/talks/tree/main/htmx"
-					style="padding-left: 1rem">Resources on Github</a
-				>
-			</p>
-		</Project>
+	<Project
+		name="Rethinking Webdev with HTMX"
+		src="projects/htmx/htmx.jpg"
+		alt="Presenting at the meetup"
+	>
+		A talk I gave at the
+		<a href="https://www.meetup.com/reactjs-utah/">React Utah Meetup</a> to discuss
+		the HTMX library.
 
-		<Project
-			name="vkad"
-			src={[
-				"https://project-videos.grover.sh/vkad/0.webm",
-				"https://project-videos.grover.sh/vkad/0.mp4",
-			]}
-		>
-			A Vulkan-based CAD program capable of creating 3D-printable models.
+		<p class="text-center">
+			<a
+				href="https://www.linkedin.com/feed/update/urn:li:activity:7250701422923558912/"
+				>LinkedIn</a
+			>
+			<a
+				href="https://github.com/richgrov/talks/tree/main/htmx"
+				style="padding-left: 1rem">Resources on Github</a
+			>
+		</p>
+	</Project>
 
-			<p>
-				<a href="https://github.com/richgrov/simulo" class="text-center"
-					>View on GitHub</a
-				>
-			</p>
-		</Project>
+	<Project
+		name="vkad"
+		src={[
+			"https://project-videos.grover.sh/vkad/0.webm",
+			"https://project-videos.grover.sh/vkad/0.mp4",
+		]}
+	>
+		A Vulkan-based CAD program capable of creating 3D-printable models.
 
-		<Project
-			name="MicroGD"
-			src="https://raw.githubusercontent.com/richgrov/villa/main/screenshot.png"
-			alt="Screenshot of the project"
-		>
-			An standalone GDScript interpreter written from scratch in Rust.
+		<p>
+			<a href="https://github.com/richgrov/simulo" class="text-center"
+				>View on GitHub</a
+			>
+		</p>
+	</Project>
 
-			<p>
-				<a href="https://github.com/richgrov/MicroGD" class="text-center">
-					View on GitHub
-				</a>
-			</p>
-		</Project>
+	<Project
+		name="MicroGD"
+		src="https://raw.githubusercontent.com/richgrov/villa/main/screenshot.png"
+		alt="Screenshot of the project"
+	>
+		An standalone GDScript interpreter written from scratch in Rust.
 
-		<section style="padding-bottom: 5rem"></section>
-	</body>
-</html>
+		<p>
+			<a href="https://github.com/richgrov/MicroGD" class="text-center">
+				View on GitHub
+			</a>
+		</p>
+	</Project>
+
+	<section>
+		<h2 class="text-center">Articles</h2>
+	</section>
+
+	<section style="padding-bottom: 5rem"></section>
+</Layout>
