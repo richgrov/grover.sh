@@ -5,9 +5,11 @@ pubDate: 2025-03-30
 description: Send this to anyone who thinks reality is dull
 ---
 
+From a hard-working employee of a tech company I admire:
 
-**"There is no shortage of exitement"** is a quote from an employee of a tech company I admire when
-asked how he enjoys life without watching TV, drinking alchohol, or reading the news.
+-   "I stopped watching tv/ movies, drinking alcohol, using a wallet/cash, reading second hand news..."
+-   _"What do you do to have fun?"_
+-   **"There is no shortage of excitement"**
 
 To my greatest disapointment, I frequently hear people (in tech!) say life is boring. If you meet
 anyone who:
@@ -27,6 +29,7 @@ Please send this page to them.
 At a time when:
 
 -   Knowledge is one tap away
+-   Global health is improving
 -   Meeting the bare necessities is trivial
 -   Problems to be solved are everywhere
 
