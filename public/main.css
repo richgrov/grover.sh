@@ -15,20 +15,27 @@ body {
 	background-size: 33%;
 }
 
-h1 {
+h1,
+h2,
+h3 {
 	font-family: "Oranienbaum", monospace;
 	font-weight: unset;
-	font-size: 4.5rem;
-	line-height: 4rem;
 	margin: 0;
 }
 
+h1 {
+	font-size: 4.5rem;
+	line-height: 4rem;
+}
+
 h2 {
-	font-family: "Oranienbaum", monospace;
-	font-weight: unset;
 	font-size: 3rem;
 	line-height: 4rem;
-	margin: 0;
+}
+
+h3 {
+	font-size: 2rem;
+	line-height: 3rem;
 }
 
 section {
@@ -181,4 +188,16 @@ a:has(> img) {
 	to {
 		background-position: 100% 0;
 	}
+}
+
+.image-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 5px;
+}
+
+.image-grid img {
+	object-fit: cover;
+	aspect-ratio: 4 / 3;
+	width: 100%;
 }

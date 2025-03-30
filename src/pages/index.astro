@@ -129,5 +129,27 @@ const articles: any[] = await Promise.all(
 		<h2 class="text-center">Articles</h2>
 	</section>
 
+	{
+		articles.map((article: any) => (
+			<section>
+				<div style="margin-left: 100px">
+					<span>
+						{new Date(article.frontmatter.pubDate)
+							.toLocaleDateString("en-US", {
+								weekday: "long",
+								month: "long",
+								day: "numeric",
+								year: "numeric",
+							})
+							.toUpperCase()}
+					</span>
+					<a href={article.url}>
+						<h2>{article.frontmatter.title}</h2>
+					</a>
+				</div>
+			</section>
+		))
+	}
+
 	<section style="padding-bottom: 5rem"></section>
 </Layout>
