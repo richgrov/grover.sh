@@ -1,6 +1,6 @@
 ---
 layout: "../layouts/BlogLayout.astro"
-title: "There is No Shortage of Exitement"
+title: "There is No Shortage of Excitement"
 pubDate: 2025-03-30
 description: Send this to anyone who thinks reality is dull
 ---
