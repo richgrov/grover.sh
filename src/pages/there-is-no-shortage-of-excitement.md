@@ -51,7 +51,6 @@ So much has been done by people like this, and so much can be done by you:
     <img alt="xAI's Cluster of 100,000+ H100s" src="https://pbs.twimg.com/media/GhvbG-hXgAAlAXC?format=jpg&name=medium"/>
     <img alt="Boom Overture Supersonic Jet" src="https://s202.q4cdn.com/986123435/files/doc_news/2022/08/1/Boom_60Ka_16x9_v2.jpg"/>
     <img alt="Starship Landing" src="https://pbs.twimg.com/media/GZya-ecXQAAmb0n?format=jpg&name=large"/>
-    <img alt="Boeing 787" src="https://images.aircharterservice.com/global/aircraft-guide/group-charter/boeing-b787-1.jpg"/>
     <img alt="Jensen Huang Holding GPU" src="https://external-preview.redd.it/nvidia-ceo-we-cant-do-computer-graphics-anymore-without-v0-ZHSJfOunoJHhXCkfKkA_qegGzGe9p3ons5YiAjlLrpA.jpg?auto=webp&s=988a6c3076e352a7d5017407c915ea14e9226852"/>
     <img alt="Noland Arbaugh using the Neuralink" src="https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i.JTzXXe3ANY/v2/-1x-1.webp"/>
     <img alt="Impulse Labs Electric Stove" src="https://www.potreroview.net/wp-content/uploads/2023/12/PotreroView_2023-06_impulse-labs.png"/>
@@ -73,12 +72,7 @@ So much has been done by people like this, and so much can be done by you:
     <img alt="International Space Station" src="https://cdn.mos.cms.futurecdn.net/F4usRYsv56CWbPk6YK2YCT.jpg"/>
     <img alt="Zipline Aircraft-Based Delivery" src="https://upload.wikimedia.org/wikipedia/commons/9/96/Zipline_Drone_Launch.jpg"/>
     <img alt="TSMC" src="https://cdn.wccftech.com/wp-content/uploads/2024/04/Intel-TSMC.webp"/>
-    <img alt="Meta Quest 3" src="https://lordsofgaming.net/wp-content/uploads/2024/10/Meta-Quest-3-MR.jpg"/>
-    <img alt="Bagger 288" src="https://i.ytimg.com/vi/rtDQazrknsE/sddefault.jpg"/>
     <img alt="Vegas Sphere" src="https://media.licdn.com/dms/image/v2/D4D12AQF0dIGNmVVzyQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1711453265378?e=2147483647&v=beta&t=IUoYAae87MPdeGLc-wKF5i8Kcpjnt1BiS1SQMCAtnfA"/>
-    <img alt="Burj Kalifa" src="https://www.allplan.com/fileadmin/_processed_/6/5/csm_iStock-183346577_NEU_b998568fdd.jpg"/>
-    <img alt="Shinkansen Bullet Train" src="https://cdn.cheapoguides.com/wp-content/uploads/sites/2/2023/10/tokaido-shinkansen_gdl.jpg"/>
-    <img alt="GE9X Jet Engine" src="https://i.redd.it/weycj4muamy51.jpg"/>
     <img alt="Daylight Computer" src="https://bgr.com/wp-content/uploads/2024/07/Daylight-Computer-DC-1.jpg?quality=82&strip=all&resize=1400,788"/>
     <img alt="Projection Mapping on the Castle at Disney" src="https://www.disneycampus.com/content/dam/dse-ic/blog/the-science-behind-the-magic-disney-enchantment/Image2.png"/>
 </div
