@@ -7,176 +7,174 @@ import Stopwatch from "../components/Stopwatch.astro";
 
 const articleImports = Object.values(import.meta.glob("./*.md"));
 const articles: any[] = await Promise.all(
-	articleImports.map((article) => article()),
+  articleImports.map((article) => article()),
 );
 ---
 
 <Layout
-	title="Richard Grover - Home Page"
-	description="Hello, I'm Richard Grover. I live in Salt Lake City, Utah and am interested in all things tech. Learn more about me here!"
+  title="Richard Grover - Home Page"
+  description="Hello, I'm Richard Grover. I live in Salt Lake City, Utah and am interested in all things tech. Learn more about me here!"
 >
-	<div class="row col-if-tablet black-corners">
-		<section>
-			<div>
-				<h2>About</h2>
-				Hello, I'm <strong>Richard Grover</strong>. I live in
-				<strong>Salt Lake City, Utah</strong>.
-				<ul>
-					<li>When I was 12, I wrote my first line of code</li>
-					<li>
-						When I was 17, I founded a gaming startup that got acquired
-					</li>
-					<li>
-						Now, I attend
-						<a href="https://neumont.edu/" target="_blank"
-							>Neumont College of Computer Science</a
-						>
-					</li>
-				</ul>
-			</div>
-		</section>
-		<section>
-			<div>
-				<div class="flex w-full flex-col gap-1">
-					<h2>Statistics</h2>
-					<Experience />
-					<p>
-						Building for <Stopwatch since={Date.UTC(2012, 6, 18)} />
-						Programming for <Stopwatch since={Date.UTC(2017, 0, 0)} />
-					</p>
-					<p>
-						Whether it's mobile apps, compilers, frontend, or robotics, I
-						have always had a passion for building new things.
-					</p>
-				</div>
-			</div>
-		</section>
-	</div>
+  <div class="row col-if-tablet black-corners">
+    <section>
+      <div>
+        <h2>About</h2>
+        Hello, I'm <strong>Richard Grover</strong>. I live in
+        <strong>Salt Lake City, Utah</strong>.
+        <ul>
+          <li>When I was 12, I wrote my first line of code</li>
+          <li>When I was 17, I founded a gaming startup that got acquired</li>
+          <li>
+            Now, I attend
+            <a href="https://neumont.edu/" target="_blank"
+              >Neumont College of Computer Science</a
+            >
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section>
+      <div>
+        <div class="flex w-full flex-col gap-1">
+          <h2>Statistics</h2>
+          <Experience />
+          <p>
+            Building for <Stopwatch since={Date.UTC(2012, 6, 18)} />
+            Programming for <Stopwatch since={Date.UTC(2017, 0, 0)} />
+          </p>
+          <p>
+            Whether it's mobile apps, compilers, frontend, or robotics, I have
+            always had a passion for building new things.
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
 
-	<section>
-		<h2 class="text-center">Projects</h2>
-	</section>
+  <section>
+    <h2 class="text-center">Projects</h2>
+  </section>
 
-	<Project
-		name="dCubed"
-		src={["projects/dCubed/0.webm", "projects/dCubed/0.mp4"]}
-		width={1222}
-		height={706}
-	>
-		A Rubik's Cube solver powered by computer vision.
-		<span class="fire-text"><strong>1st place</strong></span> at my college's project
-		showcase!
+  <Project
+    name="dCubed"
+    src={["projects/dCubed/0.webm", "projects/dCubed/0.mp4"]}
+    width={1222}
+    height={706}
+  >
+    A Rubik's Cube solver powered by computer vision.
+    <span class="fire-text"><strong>1st place</strong></span> at my college's project
+    showcase!
 
-		<p>
-			<a href="https://github.com/richgrov/dCubed" class="text-center"
-				>View on GitHub</a
-			>
-		</p>
-	</Project>
+    <p>
+      <a href="https://github.com/richgrov/dCubed" class="text-center"
+        >View on GitHub</a
+      >
+    </p>
+  </Project>
 
-	<Project
-		name="Rethinking Webdev with HTMX"
-		src="projects/htmx/htmx.jpg"
-		alt="Presenting at the meetup"
-	>
-		A talk I gave at the
-		<a href="https://www.meetup.com/reactjs-utah/">React Utah Meetup</a> to discuss
-		the HTMX library.
+  <Project
+    name="Rethinking Webdev with HTMX"
+    src="projects/htmx/htmx.jpg"
+    alt="Presenting at the meetup"
+  >
+    A talk I gave at the
+    <a href="https://www.meetup.com/reactjs-utah/">React Utah Meetup</a> to discuss
+    the HTMX library.
 
-		<p class="text-center">
-			<a
-				href="https://www.linkedin.com/feed/update/urn:li:activity:7250701422923558912/"
-				>LinkedIn</a
-			>
-			<a
-				href="https://github.com/richgrov/talks/tree/main/htmx"
-				style="padding-left: 1rem">Resources on Github</a
-			>
-		</p>
-	</Project>
+    <p class="text-center">
+      <a
+        href="https://www.linkedin.com/feed/update/urn:li:activity:7250701422923558912/"
+        >LinkedIn</a
+      >
+      <a
+        href="https://github.com/richgrov/talks/tree/main/htmx"
+        style="padding-left: 1rem">Resources on Github</a
+      >
+    </p>
+  </Project>
 
-	<Project
-		name="vkad"
-		src={[
-			"https://project-videos.grover.sh/vkad/0.webm",
-			"https://project-videos.grover.sh/vkad/0.mp4",
-		]}
-	>
-		A Vulkan-based CAD program capable of creating 3D-printable models.
+  <Project
+    name="vkad"
+    src={[
+      "https://project-videos.grover.sh/vkad/0.webm",
+      "https://project-videos.grover.sh/vkad/0.mp4",
+    ]}
+  >
+    A Vulkan-based CAD program capable of creating 3D-printable models.
 
-		<p>
-			<a href="https://github.com/richgrov/simulo" class="text-center"
-				>View on GitHub</a
-			>
-		</p>
-	</Project>
+    <p>
+      <a href="https://github.com/richgrov/simulo" class="text-center"
+        >View on GitHub</a
+      >
+    </p>
+  </Project>
 
-	<Project name="T10" src="/projects/t10/0.jpg">
-		A robotic arm with custom printed parts and firmware made from scratch
-		with first principles.
+  <Project name="T10" src="/projects/t10/0.jpg">
+    A robotic arm with custom printed parts and firmware made from scratch with
+    first principles.
 
-		<p>
-			<a href="https://github.com/richgrov/T10" class="text-center"
-				>View on GitHub</a
-			>
-		</p>
-	</Project>
+    <p>
+      <a href="https://github.com/richgrov/T10" class="text-center"
+        >View on GitHub</a
+      >
+    </p>
+  </Project>
 
-	<Project
-		name="Robo-Remote"
-		src="projects/robo-remote/0.jpg"
-		alt="A phone remote controlling the Unitree GO2 Robot Dog"
-	>
-		A custom mobile app to control the Unitree GO2 Robot Dog using a
-		reverse-engineered protocol
-	</Project>
+  <Project
+    name="Robo-Remote"
+    src="projects/robo-remote/0.jpg"
+    alt="A phone remote controlling the Unitree GO2 Robot Dog"
+  >
+    A custom mobile app to control the Unitree GO2 Robot Dog using a
+    reverse-engineered protocol
+  </Project>
 
-	<Project
-		name="MicroGD"
-		src="https://raw.githubusercontent.com/richgrov/villa/main/screenshot.png"
-		alt="Screenshot of the project"
-	>
-		An standalone GDScript interpreter written from scratch in Rust.
+  <Project
+    name="simulo"
+    src="https://media.githubusercontent.com/media/richgrov/simulo/refs/heads/main/.github/simulo-banner.png"
+    alt="Simulo Banner"
+  >
+    The game engine of the real world
 
-		<p>
-			<a href="https://github.com/richgrov/MicroGD" class="text-center">
-				View on GitHub
-			</a>
-		</p>
-	</Project>
+    <p>
+      <a href="https://github.com/richgrov/simulo" class="text-center">
+        View on GitHub
+      </a>
+    </p>
+  </Project>
 
-	<section>
-		<h2 class="text-center">Articles</h2>
-	</section>
+  <section>
+    <h2 class="text-center">Articles</h2>
+  </section>
 
-	{
-		articles.map((article: any) => (
-			<section>
-				<div style="margin-left: 100px">
-					<span>
-						{new Date(article.frontmatter.pubDate)
-							.toLocaleDateString("en-US", {
-								weekday: "long",
-								month: "long",
-								day: "numeric",
-								year: "numeric",
-							})
-							.toUpperCase()}
-					</span>
-					<a href={article.url}>
-						<h2>{article.frontmatter.title}</h2>
-					</a>
-				</div>
-			</section>
-		))
-	}
+  {
+    articles.map((article: any) => (
+      <section>
+        <div style="margin-left: 100px">
+          <span>
+            {new Date(article.frontmatter.pubDate)
+              .toLocaleDateString("en-US", {
+                weekday: "long",
+                month: "long",
+                day: "numeric",
+                year: "numeric",
+              })
+              .toUpperCase()}
+          </span>
+          <a href={article.url}>
+            <h2>{article.frontmatter.title}</h2>
+          </a>
+        </div>
+      </section>
+    ))
+  }
 
-	<section>
-		<h3>TinkeRING Webring</h3>
-		<span
-			>Content not good enough for you? Check out <a
-				href="https://tysonjenkins.dev/">this</a
-			> person's website instead</span
-		>
-	</section>
+  <section>
+    <h3>TinkeRING Webring</h3>
+    <span
+      >Content not good enough for you? Check out <a
+        href="https://tysonjenkins.dev/">this</a
+      > person's website instead</span
+    >
+  </section>
 </Layout>
