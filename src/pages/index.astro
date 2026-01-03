@@ -22,13 +22,15 @@ const articles: any[] = await Promise.all(
         Hello, I'm <strong>Richard Grover</strong>. I live in
         <strong>Salt Lake City, Utah</strong>.
         <ul>
-          <li>When I was 12, I wrote my first line of code</li>
-          <li>When I was 17, I founded a gaming startup that got acquired</li>
+          <li>At age 12, I wrote my first line of code</li>
+          <li>At age 17, I founded a gaming startup that got acquired</li>
           <li>
-            Now, I attend
-            <a href="https://neumont.edu/" target="_blank"
-              >Neumont College of Computer Science</a
-            >
+            At age 19, I deployed a software-hardware product to venues across
+            Utah
+          </li>
+          <li>
+            Now, I build immersive & interactive experiences at
+            <a href="https://dreamwalk.com/" target="_blank">DreamWalk Park</a>
           </li>
         </ul>
       </div>
@@ -54,6 +56,19 @@ const articles: any[] = await Promise.all(
   <section>
     <h2 class="text-center">Projects</h2>
   </section>
+
+  <Project name="simulo" src="projects/simulo/0.png" alt="Simulo Banner">
+    Interactive projection technology deployed to public venues across Utah,
+    including the largest aquarium in the state.
+
+    <p class="text-center">
+      <a href="https://simulo.tech/"> Website </a>
+      <a href="https://github.com/richgrov/simulo" style="padding-left: 1rem">
+        View on GitHub
+      </a>
+      <a href="/mtm210-case-study" style="padding-left: 1rem"> Evolution </a>
+    </p>
+  </Project>
 
   <Project
     name="dCubed"
@@ -129,20 +144,6 @@ const articles: any[] = await Promise.all(
     reverse-engineered protocol
   </Project>
 
-  <Project
-    name="simulo"
-    src="https://media.githubusercontent.com/media/richgrov/simulo/refs/heads/main/.github/simulo-banner.png"
-    alt="Simulo Banner"
-  >
-    Coming soon: The game engine of the real world
-
-    <p>
-      <a href="https://github.com/richgrov/simulo" class="text-center">
-        View on GitHub
-      </a>
-    </p>
-  </Project>
-
   <section>
     <h2 class="text-center">Articles</h2>
   </section>
@@ -178,3 +179,29 @@ const articles: any[] = await Promise.all(
     >
   </section>
 </Layout>
+
+<script>
+  import * as game from "../game";
+
+  var gameInitialized = false;
+
+  document.onkeydown = (e) => {
+    switch (e.key) {
+      case "w":
+      case "a":
+      case "s":
+      case "d":
+        e.preventDefault();
+        break;
+      default:
+        return;
+    }
+
+    if (gameInitialized) {
+      return;
+    }
+
+    gameInitialized = true;
+    game.start();
+  };
+</script>

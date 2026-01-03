@@ -27,25 +27,20 @@ const { title, description } = Astro.props;
 
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
-			rel="stylesheet"
-		/>
-		<link
-			href="https://fonts.googleapis.com/css2?family=Oranienbaum&display=swap"
-			rel="stylesheet"
-		/>
-
 		<title>{title}</title>
 	</head>
-	<body>
-		<Header />
+	<body class="with-margin">
+		<div id="projection">
+			<div id="view">
+				<div id="model">
+					<Header />
 
-		<slot />
+					<slot />
 
-		<section style="padding-bottom: 5rem"></section>
+					<section style="padding-bottom: 5rem"></section>
+				</div>
+			</div>
+		</div>
 	</body>
 </html>
 <!--<style is:global>
