@@ -34,7 +34,10 @@ function createPlane(
   position: THREE.Vector3 = new THREE.Vector3(0, 0, 0),
   rotation: THREE.Euler = new THREE.Euler(0, 0, 0)
 ) {
-  const obj = new THREE.Mesh(plane, new THREE.MeshBasicMaterial({ color }));
+  const obj = new THREE.Mesh(
+    plane,
+    new THREE.MeshStandardMaterial({ color, roughness: 1, metalness: 0 })
+  );
   obj.position.copy(position);
   obj.rotation.copy(rotation);
   obj.scale.set(width, height, 1);
@@ -44,21 +47,24 @@ function createPlane(
 export function start() {
   document.body.requestPointerLock();
   const maxScroll = document.body.scrollHeight;
-  const scrollY = window.scrollY / document.body.scrollHeight;
+  const scrollY = window.scrollY;
   window.scrollTo(0, 0);
   const aspect = window.innerWidth / window.innerHeight;
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(75, aspect, 0.1, 1000);
   camera.position.z = 1;
 
-  const renderer = new THREE.WebGLRenderer();
+  const renderer = new THREE.WebGLRenderer({ alpha: true });
   renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.setPixelRatio(window.devicePixelRatio);
 
   const planeHeight = 2 * Math.tan(0.5 * ((camera.fov * Math.PI) / 180));
   const planeWidth = planeHeight * aspect;
 
-  scene.add(createPlane(planeWidth, planeHeight, 0xfefefa));
+  const light = new THREE.SpotLight(0xffffff, 1);
+  light.position.set(0, 0, -1);
+  scene.add(light);
+
   scene.add(
     createPlane(
       planeWidth,
@@ -75,6 +81,26 @@ export function start() {
       0xff0000,
       new THREE.Vector3(planeWidth / 2, 0, planeWidth / 2),
       new THREE.Euler(0, -Math.PI / 2, 0)
+    )
+  );
+
+  scene.add(
+    createPlane(
+      planeWidth,
+      planeWidth,
+      0x008000,
+      new THREE.Vector3(0, planeHeight / 2, planeWidth / 2),
+      new THREE.Euler(Math.PI / 2, 0, 0)
+    )
+  );
+
+  scene.add(
+    createPlane(
+      planeWidth,
+      planeWidth,
+      0x00ff00,
+      new THREE.Vector3(0, -planeHeight / 2, planeWidth / 2),
+      new THREE.Euler(-Math.PI / 2, 0, 0)
     )
   );
 
@@ -146,22 +172,19 @@ export function start() {
     viewEl.style.width = window.innerWidth + "px";
     viewEl.style.height = window.innerHeight + "px";
     viewEl.style.transformStyle = "preserve-3d";
-    viewEl.style.pointerEvents = "none";
     viewEl.style.transform = `${cameraTransform}${cameraMatrix}translate(${widthHalf}px,${heightHalf}px)`;
 
-    objectEl.style.position = "absolute";
-    objectEl.style.pointerEvents = "auto";
+    objectEl.style.position = "fixed";
     const domScale = planeWidth / window.innerWidth;
     const planeMatrix = new THREE.Matrix4().compose(
       new THREE.Vector3(
         0,
-        maxScroll * domScale * (scrollY - 0.5) + planeHeight / 2,
+        maxScroll * domScale * (scrollY / maxScroll - 0.5) + planeHeight / 2,
         0
       ),
       new THREE.Quaternion(),
       new THREE.Vector3().setScalar(domScale)
     );
-
     objectEl.style.transform = objectToCss(planeMatrix);
   }
 

@@ -9,6 +9,11 @@ body {
   background-repeat: no-repeat;
   background-position: bottom right;
   background-size: 33%;
+  margin: 0;
+}
+
+body.game #projection {
+  pointer-events: none;
 }
 
 #model {
@@ -19,14 +24,8 @@ body {
   max-width: 1024px;
 }
 
-body.game {
-  margin: 0;
-  overflow: hidden;
-}
-
 body.game #projection {
   position: fixed;
-  z-index: 999;
 }
 
 canvas {
