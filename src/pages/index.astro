@@ -13,41 +13,46 @@ const articles: any[] = await Promise.all(
 
 <Layout
   title="Richard Grover - Home Page"
-  description="Hello, I'm Richard Grover. I live in Salt Lake City, Utah and am interested in all things tech. Learn more about me here!"
+  description="Hello, I'm Richard Grover. I'm an engineer at Dreamwalk Park. Learn more about me here!"
 >
+  <section></section>
+
   <div class="row col-if-tablet black-corners">
     <section>
       <div>
-        <h2>About</h2>
-        Hello, I'm <strong>Richard Grover</strong>. I live in
-        <strong>Salt Lake City, Utah</strong>.
-        <ul>
-          <li>At age 12, I wrote my first line of code</li>
-          <li>At age 17, I founded a gaming startup that got acquired</li>
-          <li>
-            At age 19, I deployed a software-hardware product to venues across
-            Utah
-          </li>
-          <li>
-            Now, I build immersive & interactive experiences at
-            <a href="https://dreamwalk.com/" target="_blank">DreamWalk Park</a>
-          </li>
-        </ul>
+        <h2>Hello, I'm</h2>
+        <a href="/">
+          <img
+            src="/richard-black.png"
+            alt="Richard Grover"
+            style="max-height: 150px"
+          />
+        </a>
+
+        <br />
+        <br />
+
+        I build immersive and interactive experiences at
+        <a href="https://dreamwalk.com/" target="_blank">DreamWalk Park</a>
       </div>
     </section>
     <section>
       <div>
         <div class="flex w-full flex-col gap-1">
           <h2>Statistics</h2>
-          <Experience />
           <p>
             Building for <Stopwatch since={Date.UTC(2012, 6, 18)} />
             Programming for <Stopwatch since={Date.UTC(2017, 0, 0)} />
           </p>
-          <p>
-            Whether it's mobile apps, compilers, frontend, or robotics, I have
-            always had a passion for building new things.
-          </p>
+          <ul>
+            <li>At age 12, I wrote my first line of code</li>
+            <li>At age 17, I founded a gaming startup that got acquired</li>
+            <li>
+              At age 19, I deployed a software-hardware product to venues across
+              Utah
+            </li>
+            <li>Now, I build immersive & interactive experiences at</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -174,12 +179,17 @@ const articles: any[] = await Promise.all(
   }
 
   <section>
-    <h3>TinkeRING Webring</h3>
-    <span
-      >Content not good enough for you? Check out <a
-        href="https://tysonjenkins.dev/">this</a
-      > person's website instead</span
-    >
+    <div class="row gap-4">
+      <a class="w-text-3xl" href="https://github.com/richgrov">
+        <img src="/ic/github.png" alt="GitHub Icon" />
+      </a>
+      <a class="w-text-3xl" href="https://www.linkedin.com/in/richgrov/">
+        <img src="/ic/linkedin.png" alt="LinkedIn Icon" />
+      </a>
+      <a class="w-text-3xl" href="https://www.x.com/richgrov">
+        <img src="/ic/x.png" alt="X Icon" />
+      </a>
+    </div>
   </section>
 </Layout>
 

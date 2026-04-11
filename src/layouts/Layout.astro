@@ -1,8 +1,6 @@
 ---
 import "../../public/main.css";
 
-import Header from "../components/Header.astro";
-
 interface Props {
 	title: string;
 	description: string;
@@ -44,8 +42,6 @@ const { title, description } = Astro.props;
 		<div id="projection">
 			<div id="view">
 				<div id="model">
-					<Header />
-
 					<slot />
 
 					<section style="padding-bottom: 5rem"></section>
