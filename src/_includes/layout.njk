@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="{{ description }}" />
+		<meta name="viewport" content="width=device-width" />
+
+		<meta property="og:title" content="{{ title }}" />
+		<meta property="og:type" content="website" />
+		<meta property="og:description" content="{{ description }}" />
+
+		<meta name="twitter:title" content="{{ title }}" />
+		<meta name="twitter:description" content="{{ description }}" />
+
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Oranienbaum&display=swap"
+			rel="stylesheet"
+		/>
+
+		<link rel="stylesheet" href="/main.css" />
+
+		<title>{{ title }}</title>
+	</head>
+	<body class="with-margin">
+		<div id="projection">
+			<div id="view">
+				<div id="model">
+					{{ content | safe }}
+
+					<section style="padding-bottom: 5rem"></section>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

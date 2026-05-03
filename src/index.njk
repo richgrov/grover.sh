@@ -1,0 +1,154 @@
+---
+layout: layout.njk
+title: "Richard Grover - Home Page"
+description: "Hello, I'm Richard Grover. I'm an engineer at Dreamwalk Park. Learn more about me here!"
+---
+{% from "project.njk" import project %}
+
+<section></section>
+
+<div class="row col-if-tablet black-corners">
+  <section>
+    <div>
+      <h2>Hello, I'm</h2>
+      <a href="/">
+        <img
+          src="/richard-black.png"
+          alt="Richard Grover"
+          style="max-height: 150px"
+        />
+      </a>
+
+      <br />
+      <br />
+
+      I build immersive and interactive experiences at
+      <a href="https://dreamwalk.com/" target="_blank">Dreamwalk Park</a>
+    </div>
+  </section>
+  <section>
+    <div>
+      <div class="flex w-full flex-col gap-1">
+        <h2>Statistics</h2>
+        <p>
+          Building for <span id="stopwatch-1342569600000" class="invert-text"></span>
+          Programming for <span id="stopwatch-1482969600000" class="invert-text"></span>
+        </p>
+        <ul>
+          <li>At age 12, I wrote my first line of code</li>
+          <li>At age 17, I founded a gaming startup that got acquired</li>
+          <li>
+            At age 19, I deployed a software-hardware product to venues across
+            Utah
+          </li>
+          <li>
+            Now, I build immersive & interactive experiences at
+            <a href="https://dreamwalk.com/" target="_blank">Dreamwalk Park</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+  function startStopwatch(id, since) {
+    setInterval(function () {
+      var difference = Date.now() - since;
+      var seconds = Math.floor(difference / 1000);
+      var minutes = Math.floor(seconds / 60);
+      var hours = Math.floor(minutes / 60);
+      var days = Math.floor(hours / 24);
+      var years = Math.floor(days / 365);
+      document.getElementById(id).innerText =
+        years + "y, " + (days % 365) + "d, " + (hours % 24) + "h, " + (minutes % 60) + "m, " + (seconds % 60) + "s";
+    }, 1000);
+  }
+  startStopwatch("stopwatch-1342569600000", 1342569600000);
+  startStopwatch("stopwatch-1482969600000", 1482969600000);
+</script>
+
+<section>
+  <h2 class="text-center">Projects</h2>
+</section>
+
+{% call project("simulo", "projects/simulo/0.png", "Simulo Banner") %}
+  Interactive projection technology deployed to public venues across Utah,
+  including the largest aquarium in the state.
+
+  <p class="text-center">
+    <a href="https://simulo.tech/"> Website </a>
+    <a href="https://github.com/richgrov/simulo" style="padding-left: 1rem">
+      View on GitHub
+    </a>
+    <a
+      href="https://www.youtube.com/watch?v=3ZshR_2w_GI"
+      style="padding-left: 1rem">Documentary</a>
+  </p>
+{% endcall %}
+
+{% call project("dCubed", "", "", "projects/dCubed/0.webm", "projects/dCubed/0.mp4", 1222, 706) %}
+  A Rubik's Cube solver powered by computer vision.
+  <span class="fire-text"><strong>1st place</strong></span> at my college's project
+  showcase!
+
+  <p>
+    <a href="https://github.com/richgrov/dCubed" class="text-center"
+      >View on GitHub</a>
+  </p>
+{% endcall %}
+
+{% call project("Rethinking Webdev with HTMX", "projects/htmx/htmx.jpg", "Presenting at the meetup") %}
+  A talk I gave at the
+  <a href="https://www.meetup.com/reactjs-utah/">React Utah Meetup</a> to discuss
+  the HTMX library.
+
+  <p class="text-center">
+    <a
+      href="https://www.linkedin.com/feed/update/urn:li:activity:7250701422923558912/"
+      >LinkedIn</a>
+    <a
+      href="https://github.com/richgrov/talks/tree/main/htmx"
+      style="padding-left: 1rem">Resources on Github</a>
+  </p>
+{% endcall %}
+
+{% call project("vkad", "", "", "https://project-videos.grover.sh/vkad/0.webm", "https://project-videos.grover.sh/vkad/0.mp4") %}
+  A Vulkan-based CAD program capable of creating 3D-printable models.
+
+  <p>
+    <a href="https://github.com/richgrov/simulo" class="text-center"
+      >View on GitHub</a>
+  </p>
+{% endcall %}
+
+{% call project("T10", "/projects/t10/0.jpg") %}
+  A robotic arm with custom printed parts and firmware made from scratch with
+  first principles.
+
+  <p>
+    <a href="https://github.com/richgrov/T10" class="text-center"
+      >View on GitHub</a>
+  </p>
+{% endcall %}
+
+{% call project("Robo-Remote", "projects/robo-remote/0.jpg", "A phone remote controlling the Unitree GO2 Robot Dog") %}
+  A custom mobile app to control the Unitree GO2 Robot Dog using a
+  reverse-engineered protocol
+{% endcall %}
+
+<section>
+  <div class="row gap-4">
+    <a class="w-text-3xl" href="https://github.com/richgrov">
+      <img src="/ic/github.png" alt="GitHub Icon" />
+    </a>
+    <a class="w-text-3xl" href="https://www.linkedin.com/in/richgrov/">
+      <img src="/ic/linkedin.png" alt="LinkedIn Icon" />
+    </a>
+    <a class="w-text-3xl" href="https://www.x.com/richgrov">
+      <img src="/ic/x.png" alt="X Icon" />
+    </a>
+  </div>
+</section>
+
+<script src="/game.js"></script>

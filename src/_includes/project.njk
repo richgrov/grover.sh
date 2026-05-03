@@ -1,0 +1,23 @@
+{% macro project(name, src, alt, webm, mp4, width, height) %}
+<section>
+	<div class="row col-if-tablet items-center justify-around gap-4">
+		<div style="flex-basis: 50%">
+			<div style="max-width: 400px; margin: 0 auto">
+				<h1 class="text-center">{{ name }}</h1>
+				{{ caller() }}
+			</div>
+		</div>
+		<div style="flex-basis: 50%">
+			{% if webm %}
+				<video width="{{ width }}" height="{{ height }}" autoplay loop muted playsinline class="shadow">
+					<source src="{{ webm }}" type="video/webm" />
+					<source src="{{ mp4 }}" type="video/mp4" />
+					Your browser couldn't play this video
+				</video>
+			{% else %}
+				<img class="shadow" src="{{ src }}" alt="{{ alt }}" />
+			{% endif %}
+		</div>
+	</div>
+</section>
+{% endmacro %}
