@@ -35,6 +35,7 @@ section {
 img {
   max-width: 100%;
   height: auto;
+  border: 1px solid black;
 }
 
 a {
@@ -43,31 +44,16 @@ a {
 
 .row {
   display: flex;
+  gap: 1rem;
+  align-items: center;
 }
 
 @media (max-width: 1024px) {
-  .col-if-tablet {
+  .row {
     flex-direction: column;
   }
 }
 
-.justify-around {
-  justify-content: space-around;
-}
-
-.items-center {
-  align-items: center;
-}
-
-.gap-4 {
-  gap: 1rem;
-}
-
 .text-center {
   text-align: center;
-  display: block;
-}
-
-.shadow {
-  border: 1px solid black;
 }
