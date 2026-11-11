@@ -99,32 +99,6 @@ a:has(> img) {
   border: 1px solid black;
 }
 
-.fire-text {
-  animation: bg-shift 1.5s linear infinite;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  animation: bg-shift 1.5s linear infinite;
-  background-size: 333% 100%;
-  background-image: linear-gradient(
-    to right,
-    darkorange,
-    yellow,
-    darkorange,
-    yellow
-  );
-}
-
-@keyframes bg-shift {
-  0% {
-    background-position: 0 0;
-  }
-
-  to {
-    background-position: 100% 0;
-  }
-}
-
 .image-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

@@ -3,7 +3,6 @@ layout: layout.njk
 title: "Richard Grover - Home Page"
 description: "Hello, I'm Richard Grover. I'm an engineer at Dreamwalk Park. Learn more about me here!"
 ---
-{% from "project.njk" import project %}
 
 <section>
   <h1 class="text-center">Hi, I'm Richard</h1>
@@ -14,96 +13,78 @@ description: "Hello, I'm Richard Grover. I'm an engineer at Dreamwalk Park. Lear
   </p>
 </section>
 
-<script>
-  function carouselNext(id) {
-    var carousel = document.getElementById(id);
-    var inner = carousel.querySelector('.carousel-inner');
-    var total = inner.children.length;
-    var current = parseInt(inner.dataset.index || '0');
-    current = (current + 1) % total;
-    inner.dataset.index = current;
-    inner.style.transform = 'translateX(-' + (current * 100) + '%)';
-  }
-
-  function carouselPrev(id) {
-    var carousel = document.getElementById(id);
-    var inner = carousel.querySelector('.carousel-inner');
-    var total = inner.children.length;
-    var current = parseInt(inner.dataset.index || '0');
-    current = (current - 1 + total) % total;
-    inner.dataset.index = current;
-    inner.style.transform = 'translateX(-' + (current * 100) + '%)';
-  }
-</script>
-
 <section>
-  <h2 class="text-center">Projects</h2>
+  <h2 class="text-center">My Life in 4 Parts</h2>
 </section>
 
-{% call project("simulo", "projects/simulo/0.png", "Simulo Banner") %}
-  Interactive projection technology deployed to public venues across Utah,
-  including the largest aquarium in the state.
+<section>
+	<div class="row col-if-tablet items-center justify-around gap-4">
+		<div style="flex-basis: 50%">
+			<div style="max-width: 400px; margin: 0 auto">
+				<h1 class="text-center">Age 11</h1>
+				<p>
+					I obsessed over creating experiences for others. I built arcade games in my
+					garage and taught myself Java to make Minecraft mods.
+				</p>
+			</div>
+		</div>
+		<div style="flex-basis: 50%">
+			<img class="shadow" src="/11.jpg" alt="Age 11 photo" />
+		</div>
+	</div>
+</section>
 
-  <p class="text-center">
-    <a href="https://simulo.tech/"> Website </a>
-    <a href="https://github.com/richgrov/simulo" style="padding-left: 1rem">
-      View on GitHub
-    </a>
-    <a
-      href="https://www.youtube.com/watch?v=3ZshR_2w_GI"
-      style="padding-left: 1rem">Documentary</a>
-  </p>
-{% endcall %}
+<section>
+	<div class="row col-if-tablet items-center justify-around gap-4">
+		<div style="flex-basis: 50%">
+			<div style="max-width: 400px; margin: 0 auto">
+				<h1 class="text-center">Age 17</h1>
+				<p>
+					I created a gaming business inside <em>Minecraft</em>, grew to 100+ users,
+					achieved profitability, and sold it to a new owner.
+				</p>
+			</div>
+		</div>
+		<div style="flex-basis: 50%">
+			<img class="shadow" src="/17.webp" alt="Age 17 photo" />
+		</div>
+	</div>
+</section>
 
-{% call project("dCubed", "", "", "projects/dCubed/0.webm", "projects/dCubed/0.mp4", 1222, 706) %}
-  A Rubik's Cube solver powered by computer vision.
-  <span class="fire-text"><strong>1st place</strong></span> at my college's project
-  showcase!
+<section>
+	<div class="row col-if-tablet items-center justify-around gap-4">
+		<div style="flex-basis: 50%">
+			<div style="max-width: 400px; margin: 0 auto">
+				<h1 class="text-center">Age 19</h1>
+				<p>
+					I founded <a href="https://simulo.tech/" target="_blank">simulo.tech</a> which deployed interactive projection technology to venues across Utah, including the largest aquarium in the state.
+				</p>
+			</div>
+		</div>
+		<div style="flex-basis: 50%">
+			<img class="shadow" src="/19.webp" alt="Age 19 photo" />
+		</div>
+	</div>
+</section>
 
-  <p>
-    <a href="https://github.com/richgrov/dCubed" class="text-center"
-      >View on GitHub</a>
-  </p>
-{% endcall %}
-
-{% call project("Rethinking Webdev with HTMX", "projects/htmx/htmx.jpg", "Presenting at the meetup") %}
-  A talk I gave at the
-  <a href="https://www.meetup.com/reactjs-utah/">React Utah Meetup</a> to discuss
-  the HTMX library.
-
-  <p class="text-center">
-    <a
-      href="https://www.linkedin.com/feed/update/urn:li:activity:7250701422923558912/"
-      >LinkedIn</a>
-    <a
-      href="https://github.com/richgrov/talks/tree/main/htmx"
-      style="padding-left: 1rem">Resources on Github</a>
-  </p>
-{% endcall %}
-
-{% call project("vkad", "", "", "https://project-videos.grover.sh/vkad/0.webm", "https://project-videos.grover.sh/vkad/0.mp4") %}
-  A Vulkan-based CAD program capable of creating 3D-printable models.
-
-  <p>
-    <a href="https://github.com/richgrov/simulo" class="text-center"
-      >View on GitHub</a>
-  </p>
-{% endcall %}
-
-{% call project("T10", "/projects/t10/0.jpg") %}
-  A robotic arm with custom printed parts and firmware made from scratch with
-  first principles.
-
-  <p>
-    <a href="https://github.com/richgrov/T10" class="text-center"
-      >View on GitHub</a>
-  </p>
-{% endcall %}
-
-{% call project("Robo-Remote", "projects/robo-remote/0.jpg", "A phone remote controlling the Unitree GO2 Robot Dog") %}
-  A custom mobile app to control the Unitree GO2 Robot Dog using a
-  reverse-engineered protocol
-{% endcall %}
+<section>
+	<div class="row col-if-tablet items-center justify-around gap-4">
+		<div style="flex-basis: 50%">
+			<div style="max-width: 400px; margin: 0 auto">
+				<h1 class="text-center">Age 20</h1>
+				<p>
+					My startup got me a job at Dreamwalk Park, where I reside to this day. I designed and built <a href="https://dreamwalk.com/" target="_blank">dreamwalk.com</a> and maintain our AI inference and deployment infrastructure.
+				</p>
+				<p>
+					Bonus: <a href="https://www.youtube.com/watch?v=4TW9AFfSux4" target="_blank">How I got the job</a>
+				</p>
+			</div>
+		</div>
+		<div style="flex-basis: 50%">
+			<img class="shadow" src="/20.jpg" alt="Age 20 photo" />
+		</div>
+	</div>
+</section>
 
 <section>
   <div class="row gap-4">
