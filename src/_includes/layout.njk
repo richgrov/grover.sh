@@ -19,12 +19,6 @@
 		<title>{{ title }}</title>
 	</head>
 	<body class="with-margin">
-		<div id="projection">
-			<div id="view">
-				<div id="model">
-					{{ content | safe }}
-				</div>
-			</div>
-		</div>
+		{{ content | safe }}
 	</body>
 </html>

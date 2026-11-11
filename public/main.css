@@ -4,26 +4,9 @@ body {
   background-color: var(--bg);
   font-size: 1.125rem;
   line-height: 1.6875rem;
-  margin: 0;
-}
-
-body.game #projection {
-  pointer-events: none;
-}
-
-#model {
   margin: 0 auto;
   width: 90%;
   max-width: 1024px;
-}
-
-body.game #projection {
-  position: fixed;
-}
-
-canvas {
-  position: fixed;
-  top: 0;
 }
 
 h1,

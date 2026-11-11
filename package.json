@@ -9,9 +9,7 @@
     "preview": "eleventy --serve --port 4321"
   },
   "dependencies": {
-    "@11ty/eleventy": "^3.0.0",
-    "esbuild": "^0.25.0",
-    "three": "^0.177.0"
+    "@11ty/eleventy": "^3.0.0"
   },
   "devDependencies": {
     "prettier": "^3.7.4"
