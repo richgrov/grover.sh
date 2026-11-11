@@ -5,67 +5,35 @@ description: "Hello, I'm Richard Grover. I'm an engineer at Dreamwalk Park. Lear
 ---
 {% from "project.njk" import project %}
 
-<section></section>
+<section>
+  <h1 class="text-center">Hi, I'm Richard</h1>
 
-<div class="row col-if-tablet black-corners">
-  <section>
-    <div>
-      <h2>Hello, I'm</h2>
-      <a href="/">
-        <img
-          src="/richard-black.png"
-          alt="Richard Grover"
-          style="max-height: 150px"
-        />
-      </a>
-
-      <br />
-      <br />
-
-      I build immersive and interactive experiences at
-      <a href="https://dreamwalk.com/" target="_blank">Dreamwalk Park</a>
-    </div>
-  </section>
-  <section>
-    <div>
-      <div class="flex w-full flex-col gap-1">
-        <h2>Statistics</h2>
-        <p>
-          Building for <span id="stopwatch-1342569600000" class="invert-text"></span>
-          Programming for <span id="stopwatch-1482969600000" class="invert-text"></span>
-        </p>
-        <ul>
-          <li>At age 12, I wrote my first line of code</li>
-          <li>At age 17, I founded a gaming startup that got acquired</li>
-          <li>
-            At age 19, I deployed a software-hardware product to venues across
-            Utah
-          </li>
-          <li>
-            Now, I build immersive & interactive experiences at
-            <a href="https://dreamwalk.com/" target="_blank">Dreamwalk Park</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </section>
-</div>
+  <p class="text-center">
+    I build immersive & interactive experiences at
+    <a href="https://dreamwalk.com/" target="_blank">Dreamwalk Park</a>
+  </p>
+</section>
 
 <script>
-  function startStopwatch(id, since) {
-    setInterval(function () {
-      var difference = Date.now() - since;
-      var seconds = Math.floor(difference / 1000);
-      var minutes = Math.floor(seconds / 60);
-      var hours = Math.floor(minutes / 60);
-      var days = Math.floor(hours / 24);
-      var years = Math.floor(days / 365);
-      document.getElementById(id).innerText =
-        years + "y, " + (days % 365) + "d, " + (hours % 24) + "h, " + (minutes % 60) + "m, " + (seconds % 60) + "s";
-    }, 1000);
+  function carouselNext(id) {
+    var carousel = document.getElementById(id);
+    var inner = carousel.querySelector('.carousel-inner');
+    var total = inner.children.length;
+    var current = parseInt(inner.dataset.index || '0');
+    current = (current + 1) % total;
+    inner.dataset.index = current;
+    inner.style.transform = 'translateX(-' + (current * 100) + '%)';
   }
-  startStopwatch("stopwatch-1342569600000", 1342569600000);
-  startStopwatch("stopwatch-1482969600000", 1482969600000);
+
+  function carouselPrev(id) {
+    var carousel = document.getElementById(id);
+    var inner = carousel.querySelector('.carousel-inner');
+    var total = inner.children.length;
+    var current = parseInt(inner.dataset.index || '0');
+    current = (current - 1 + total) % total;
+    inner.dataset.index = current;
+    inner.style.transform = 'translateX(-' + (current * 100) + '%)';
+  }
 </script>
 
 <section>
