@@ -17,7 +17,8 @@ h3 {
   margin: 0;
 }
 
-h1 {
+h1,
+h3 {
   font-size: 4.5rem;
   line-height: 4rem;
 }
@@ -27,41 +28,17 @@ h2 {
   line-height: 4rem;
 }
 
-h3 {
-  font-size: 2rem;
-  line-height: 3rem;
-}
-
 section {
   padding: 4.5rem 1.25rem;
 }
 
-img,
-video {
+img {
   max-width: 100%;
   height: auto;
 }
 
-ul,
-ol {
-  margin: 0;
-}
-
-button,
-.button {
-  border: 1px solid black;
-  box-shadow: 8px 8px black;
-  padding: 1rem 1.25rem;
-  text-decoration: none;
-  color: inherit;
-}
-
 a {
   color: inherit;
-}
-
-a:has(> img) {
-  display: inline-block;
 }
 
 .row {
@@ -91,22 +68,6 @@ a:has(> img) {
   display: block;
 }
 
-.w-text-3xl {
-  width: 1.875rem;
-}
-
 .shadow {
   border: 1px solid black;
-}
-
-.image-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 5px;
-}
-
-.image-grid img {
-  object-fit: cover;
-  aspect-ratio: 4 / 3;
-  width: 100%;
 }
