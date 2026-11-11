@@ -1,17 +1,15 @@
 {
   "name": "",
-  "type": "module",
   "version": "0.0.1",
-  "scripts": {
-    "dev": "eleventy --serve",
-    "start": "eleventy --serve",
-    "build": "NODE_ENV=production eleventy",
-    "preview": "eleventy --serve --port 4321"
-  },
-  "dependencies": {
-    "@11ty/eleventy": "^3.0.0"
-  },
   "devDependencies": {
-    "prettier": "^3.7.4"
-  }
+    "prettier": "^3.7.4",
+    "vite": "^8.3.8"
+  },
+  "scripts": {
+    "dev": "vite",
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "type": "module"
 }
